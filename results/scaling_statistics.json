@@ -1,0 +1,316 @@
+{
+    "scaling_method": "StandardScaler",
+    "imputation_strategy": "SimpleImputer (training set mean)",
+    "training_sample_count": 1368360,
+    "num_features": 49,
+    "target_column": "pm25",
+    "target_raw_mean": 157.05695952979352,
+    "target_raw_std": 130.42745755632137,
+    "inverse_reconstruction_max_abs_error": 6.103515625e-05,
+    "inverse_reconstruction_rmse": 3.5914181353291497e-06,
+    "pre_scaling_nans": {
+        "X_train": 2855437,
+        "y_train": 0,
+        "X_val": 658729,
+        "y_val": 0,
+        "X_test": 486897,
+        "y_test": 0
+    },
+    "post_scaling_nans": 0,
+    "feature_statistics": {
+        "pm25": {
+            "raw_mean": 155.76681542175612,
+            "raw_std": 130.2821793305625,
+            "scaled_mean": 3.6445139812713023e-06,
+            "scaled_std": 0.9996185302734375
+        },
+        "pm10": {
+            "raw_mean": 352.79024602429945,
+            "raw_std": 212.0226819787816,
+            "scaled_mean": 2.9846491088392213e-05,
+            "scaled_std": 0.9995659589767456
+        },
+        "no": {
+            "raw_mean": 101.43970942680842,
+            "raw_std": 98.0321304524267,
+            "scaled_mean": 4.301846558973921e-07,
+            "scaled_std": 0.9995682239532471
+        },
+        "no2": {
+            "raw_mean": 91.61008907912671,
+            "raw_std": 50.46102209825303,
+            "scaled_mean": -2.5200237359968014e-05,
+            "scaled_std": 0.9995705485343933
+        },
+        "nox": {
+            "raw_mean": 148.91644545035504,
+            "raw_std": 103.62264393574549,
+            "scaled_mean": 4.650590199162252e-06,
+            "scaled_std": 0.9996669888496399
+        },
+        "nh3": {
+            "raw_mean": 53.8841121447736,
+            "raw_std": 32.3951149430081,
+            "scaled_mean": -2.1302745153661817e-05,
+            "scaled_std": 0.9993005394935608
+        },
+        "so2": {
+            "raw_mean": 18.17199303156246,
+            "raw_std": 14.689310576939908,
+            "scaled_mean": -2.3861241061240435e-05,
+            "scaled_std": 0.9995939135551453
+        },
+        "co": {
+            "raw_mean": 2.293199739981065,
+            "raw_std": 1.562815312497523,
+            "scaled_mean": -4.056027137266938e-06,
+            "scaled_std": 0.9993461966514587
+        },
+        "o3": {
+            "raw_mean": 29.26991159241531,
+            "raw_std": 26.769366814574898,
+            "scaled_mean": 8.4601306298282e-06,
+            "scaled_std": 0.9996117353439331
+        },
+        "temperature_c": {
+            "raw_mean": 26.17587080532347,
+            "raw_std": 8.221170862761015,
+            "scaled_mean": 1.0241400559607428e-05,
+            "scaled_std": 0.9996569752693176
+        },
+        "relative_humidity": {
+            "raw_mean": 51.3931289220195,
+            "raw_std": 20.97415145688272,
+            "scaled_mean": 0.00010530700092203915,
+            "scaled_std": 0.9997413754463196
+        },
+        "wind_speed": {
+            "raw_mean": 1.093002118476145,
+            "raw_std": 1.0075808012739302,
+            "scaled_mean": 0.0009787731105461717,
+            "scaled_std": 1.0001277923583984
+        },
+        "wind_direction": {
+            "raw_mean": 195.6970716321523,
+            "raw_std": 77.58453119434023,
+            "scaled_mean": 7.432169695675839e-06,
+            "scaled_std": 0.9998084902763367
+        },
+        "rainfall": {
+            "raw_mean": 0.08517546258520382,
+            "raw_std": 0.05623978656282563,
+            "scaled_mean": -8.08249396300198e-08,
+            "scaled_std": 0.9999212622642517
+        },
+        "solar_radiation": {
+            "raw_mean": 186.21039094414797,
+            "raw_std": 188.1902964590283,
+            "scaled_mean": -6.058908041950417e-09,
+            "scaled_std": 1.0009161233901978
+        },
+        "pressure_mmhg": {
+            "raw_mean": 858.798718798669,
+            "raw_std": 119.38998806889478,
+            "scaled_mean": 0.000845878035761416,
+            "scaled_std": 0.9970207214355469
+        },
+        "wind_dir_sin": {
+            "raw_mean": -0.17696476846233444,
+            "raw_std": 0.8428774500812455,
+            "scaled_mean": -1.8566850485512987e-05,
+            "scaled_std": 1.0004310607910156
+        },
+        "wind_dir_cos": {
+            "raw_mean": -0.2332885471650222,
+            "raw_std": 0.43815013870800606,
+            "scaled_mean": 1.671696918492671e-05,
+            "scaled_std": 0.9996417164802551
+        },
+        "wind_u_local": {
+            "raw_mean": 0.04618456719416498,
+            "raw_std": 1.4016318011764022,
+            "scaled_mean": -9.363982371723978e-07,
+            "scaled_std": 0.9973506927490234
+        },
+        "wind_v_local": {
+            "raw_mean": -0.1437018680707615,
+            "raw_std": 0.45550814251539706,
+            "scaled_mean": -9.240637155016884e-06,
+            "scaled_std": 0.9993329644203186
+        },
+        "gee_wind_speed_change_1d": {
+            "raw_mean": 0.011839618430447105,
+            "raw_std": 1.044013004230207,
+            "scaled_mean": 5.363507966649195e-07,
+            "scaled_std": 0.9997413754463196
+        },
+        "temp_change_24h": {
+            "raw_mean": -0.006214973848903075,
+            "raw_std": 2.0448803288455797,
+            "scaled_mean": -3.3476999306003563e-07,
+            "scaled_std": 0.9993537664413452
+        },
+        "pressure_change_24h": {
+            "raw_mean": 0.06407308958483562,
+            "raw_std": 4.0402445837775245,
+            "scaled_mean": 5.038510062149726e-05,
+            "scaled_std": 0.999533474445343
+        },
+        "gee_precipitation_m": {
+            "raw_mean": 0.0013843687686563746,
+            "raw_std": 0.004028793427797424,
+            "scaled_mean": -0.00010829907841980457,
+            "scaled_std": 1.0018589496612549
+        },
+        "gee_surface_pressure_pa": {
+            "raw_mean": 98376.21109990928,
+            "raw_std": 671.7153698220748,
+            "scaled_mean": 1.9136150513077155e-05,
+            "scaled_std": 0.9999298453330994
+        },
+        "gee_temp_kelvin": {
+            "raw_mean": 297.2847871714994,
+            "raw_std": 7.055683872195243,
+            "scaled_mean": 4.8930418415693566e-05,
+            "scaled_std": 0.9998418092727661
+        },
+        "gee_u_wind": {
+            "raw_mean": 0.5330828757969182,
+            "raw_std": 1.8124046266712672,
+            "scaled_mean": 2.63272686424898e-05,
+            "scaled_std": 0.9997889399528503
+        },
+        "gee_v_wind": {
+            "raw_mean": -0.49588237904101834,
+            "raw_std": 1.0505904337366347,
+            "scaled_mean": -2.1208252292126417e-05,
+            "scaled_std": 0.9999971389770508
+        },
+        "gee_temp_celsius": {
+            "raw_mean": 24.134787278713535,
+            "raw_std": 7.055683909785954,
+            "scaled_mean": 4.908742994302884e-05,
+            "scaled_std": 0.9998418092727661
+        },
+        "gee_wind_speed": {
+            "raw_mean": 1.9684570357647133,
+            "raw_std": 1.0216674529519902,
+            "scaled_mean": 3.3925964089576155e-05,
+            "scaled_std": 0.9998120665550232
+        },
+        "cams_pm25_ugm3": {
+            "raw_mean": 275.0131092495876,
+            "raw_std": 200.5261330303122,
+            "scaled_mean": -2.455248795740772e-05,
+            "scaled_std": 0.9995089173316956
+        },
+        "cams_pm10_ugm3": {
+            "raw_mean": 388.42510810460533,
+            "raw_std": 283.6606253875227,
+            "scaled_mean": 5.880255775991827e-05,
+            "scaled_std": 0.9998924136161804
+        },
+        "cams_aod550": {
+            "raw_mean": 0.7558241320624823,
+            "raw_std": 0.3747367701170059,
+            "scaled_mean": -5.33029606231139e-06,
+            "scaled_std": 0.9996201992034912
+        },
+        "fire_count_25km": {
+            "raw_mean": 0.0,
+            "raw_std": 1.0,
+            "scaled_mean": 0.0,
+            "scaled_std": 0.0
+        },
+        "fire_frp_25km": {
+            "raw_mean": 0.0,
+            "raw_std": 1.0,
+            "scaled_mean": 0.0,
+            "scaled_std": 0.0
+        },
+        "fire_count_50km": {
+            "raw_mean": 0.0,
+            "raw_std": 1.0,
+            "scaled_mean": 0.0,
+            "scaled_std": 0.0
+        },
+        "fire_frp_50km": {
+            "raw_mean": 0.0,
+            "raw_std": 1.0,
+            "scaled_mean": 0.0,
+            "scaled_std": 0.0
+        },
+        "fire_count_100km": {
+            "raw_mean": 0.12716682744307053,
+            "raw_std": 0.651115258909653,
+            "scaled_mean": -1.4392995581147261e-05,
+            "scaled_std": 0.9965794086456299
+        },
+        "fire_frp_100km": {
+            "raw_mean": 0.7967867766256804,
+            "raw_std": 5.858124745673208,
+            "scaled_mean": -0.000290833180770278,
+            "scaled_std": 0.9945906400680542
+        },
+        "hour_sin": {
+            "raw_mean": 0.0,
+            "raw_std": 0.7071067728184068,
+            "scaled_mean": 9.583020141312737e-13,
+            "scaled_std": 1.0
+        },
+        "hour_cos": {
+            "raw_mean": -1.622706049029724e-22,
+            "raw_std": 0.7071067728184068,
+            "scaled_mean": -1.0889796009383446e-12,
+            "scaled_std": 0.9999999403953552
+        },
+        "dayofweek_sin": {
+            "raw_mean": 0.0018709803731178957,
+            "raw_std": 0.7071918029177642,
+            "scaled_mean": 4.514357442531036e-06,
+            "scaled_std": 0.9999909996986389
+        },
+        "dayofweek_cos": {
+            "raw_mean": -0.0023907896018676594,
+            "raw_std": 0.7070152237314404,
+            "scaled_mean": -1.863614670583047e-05,
+            "scaled_std": 1.00315523147583
+        },
+        "dayofyear_sin": {
+            "raw_mean": -0.014091153558287063,
+            "raw_std": 0.6894135799332257,
+            "scaled_mean": 8.562894799979404e-05,
+            "scaled_std": 0.9997752904891968
+        },
+        "dayofyear_cos": {
+            "raw_mean": 0.10366791648378451,
+            "raw_std": 0.7167728509069453,
+            "scaled_mean": -2.4379663955187425e-05,
+            "scaled_std": 0.9997919797897339
+        },
+        "month_sin": {
+            "raw_mean": 0.0034015237784134084,
+            "raw_std": 0.6801958329274943,
+            "scaled_mean": 0.0004895901074633002,
+            "scaled_std": 1.0007532835006714
+        },
+        "month_cos": {
+            "raw_mean": 0.10208814649839222,
+            "raw_std": 0.7258788121641891,
+            "scaled_mean": 4.791262108483352e-05,
+            "scaled_std": 0.9992934465408325
+        },
+        "pm25_available": {
+            "raw_mean": 1.0,
+            "raw_std": 1.0,
+            "scaled_mean": 0.0,
+            "scaled_std": 0.0
+        },
+        "pollutant_count_available": {
+            "raw_mean": 5.71145531877576,
+            "raw_std": 0.5924227258607205,
+            "scaled_mean": -0.0009022920858114958,
+            "scaled_std": 1.005759835243225
+        }
+    }
+}

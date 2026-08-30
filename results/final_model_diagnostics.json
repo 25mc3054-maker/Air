@@ -1,0 +1,30 @@
+{
+  "model_name": "CoupledMultiBranchForecastModel",
+  "parameter_count": 819874,
+  "residual_analysis": {
+    "mean_residual": -14.983494758605957,
+    "median_residual": 1.7128944396972656,
+    "std_residual": 81.19032287597656,
+    "percentiles": {
+      "p5": -172.49307250976562,
+      "p25": -46.690452575683594,
+      "p50": 1.7128944396972656,
+      "p75": 31.07797622680664,
+      "p95": 89.98536682128906
+    },
+    "positive_residuals_pct": 51.41999869011363,
+    "negative_residuals_pct": 48.58000130988637
+  },
+  "horizon_summary": {
+    "best_horizon": 1,
+    "worst_horizon": 62
+  },
+  "case_studies": {
+    "case_excellent": 2708,
+    "case_typical": 1493,
+    "case_moderate_pollution": 1686,
+    "case_severe_pollution": 1927,
+    "case_extreme_spike": 123,
+    "case_worst_forecast": 2902
+  }
+}

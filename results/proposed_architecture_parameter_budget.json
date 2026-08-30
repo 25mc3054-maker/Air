@@ -1,0 +1,70 @@
+{
+  "model_name": "CoupledMultiBranchForecastModel",
+  "total_parameters": 819874,
+  "trainable_parameters": 819874,
+  "parameter_budget_limits": {
+    "target_minimum": 800000,
+    "target_maximum": 2000000,
+    "within_budget": true
+  },
+  "module_parameter_breakdown": {
+    "pollution_branch": {
+      "parameters": 40000,
+      "percentage": 4.878798449517853
+    },
+    "meteorology_branch": {
+      "parameters": 43072,
+      "percentage": 5.2534901704408234
+    },
+    "atmospheric_branch": {
+      "parameters": 40000,
+      "percentage": 4.878798449517853
+    },
+    "temporal_branch": {
+      "parameters": 4576,
+      "percentage": 0.5581345426248423
+    },
+    "gate_value": {
+      "parameters": 57600,
+      "percentage": 7.025469767305707
+    },
+    "gate_signal": {
+      "parameters": 57600,
+      "percentage": 7.025469767305707
+    },
+    "causal_attn": {
+      "parameters": 263680,
+      "percentage": 32.161039379221684
+    },
+    "ffn": {
+      "parameters": 262912,
+      "percentage": 32.06736644899094
+    },
+    "ffn_norm": {
+      "parameters": 512,
+      "percentage": 0.062448620153828516
+    },
+    "forecast_head": {
+      "parameters": 33281,
+      "percentage": 4.059282279960091
+    },
+    "spike_head": {
+      "parameters": 16641,
+      "percentage": 2.029702124960665
+    }
+  },
+  "baseline_parameter_comparisons": {
+    "GRU_Baseline_B6": {
+      "parameters": 167937,
+      "ratio_vs_proposed": 4.882033143381149
+    },
+    "LSTM_Baseline_B7": {
+      "parameters": 223873,
+      "ratio_vs_proposed": 3.6622281382748256
+    },
+    "TCN_Baseline_B8": {
+      "parameters": 570625,
+      "ratio_vs_proposed": 1.4368
+    }
+  }
+}

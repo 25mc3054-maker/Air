@@ -1,0 +1,10 @@
+{
+    "input_length": 72,
+    "output_length": 72,
+    "num_features": 49,
+    "num_targets": 1,
+    "train_samples": 19005,
+    "validation_samples": 4493,
+    "test_samples": 3393,
+    "total_samples": 26891
+}

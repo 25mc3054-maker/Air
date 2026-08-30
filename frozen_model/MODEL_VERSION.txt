@@ -1,0 +1,21 @@
+Model: CoupledMultiBranchForecastModel
+Version: PM25-CoupledMultiBranch-v1.0
+
+Parameters: 819,874
+
+Input sequence: 72 hours
+Forecast horizon: 72 hours
+
+Test sequences: 3,393
+Test timesteps: 244,296
+
+MAE: 56.66 µg/m³
+RMSE: 82.56 µg/m³
+R²: 0.3564
+WMAPE: 41.11%
+
+Baseline: TCN
+TCN MAE: 61.19 µg/m³
+Proposed MAE: 56.66 µg/m³
+
+Status: FROZEN — SIH DEMO VERSION

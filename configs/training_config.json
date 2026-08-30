@@ -1,0 +1,10 @@
+{
+    "input_size": 49,
+    "input_length": 72,
+    "output_length": 72,
+    "target_size": 1,
+    "batch_size": 64,
+    "num_workers": 0,
+    "pin_memory": false,
+    "random_seed": 42
+}

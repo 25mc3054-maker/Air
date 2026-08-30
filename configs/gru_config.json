@@ -1,0 +1,19 @@
+{
+    "input_size": 49,
+    "sequence_length": 72,
+    "output_length": 72,
+    "target_size": 1,
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "learning_rate": 0.001,
+    "weight_decay": 0.00001,
+    "batch_size": 64,
+    "max_epochs": 50,
+    "patience": 7,
+    "random_seed": 42,
+    "gradient_clip_norm": 1.0,
+    "lr_scheduler_factor": 0.5,
+    "lr_scheduler_patience": 3,
+    "min_lr": 1e-06
+}

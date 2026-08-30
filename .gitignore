@@ -1,0 +1,18 @@
+# Python cache & virtual environment
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Large Dataset Files (> 50 MB)
+data/processed/*.npy
+data/processed/scaled/*.npy
+Person A/*.csv
+
+# Temporary scratch & logs
+scratch/
+.system_generated/
+*.log

@@ -1,0 +1,106 @@
+{
+  "model_name": "CoupledMultiBranchForecastModel",
+  "parameters": 819874,
+  "checkpoint": "d:\\My Projects\\SIH2026_PersonB\\models\\checkpoints\\proposed_best.pt",
+  "overall_metrics": {
+    "params": 819874,
+    "mae": 56.66020584106445,
+    "rmse": 82.56133491797175,
+    "r2": 0.35638463497161865,
+    "wmape": 41.11486053466797,
+    "bias": -14.983494758605957,
+    "std_pred": 59.38552474975586,
+    "std_actual": 102.9113998413086,
+    "var_ratio": 0.5770548728452777,
+    "min_pred": 25.317794799804688,
+    "max_pred": 490.18743896484375,
+    "min_actual": 3.0,
+    "max_actual": 818.25
+  },
+  "improvements_vs_tcn": {
+    "mae_improvement_ugm3": 4.528228759765625,
+    "mae_percentage_improvement": 7.400465119439737,
+    "rmse_improvement_ugm3": 9.178803133415002,
+    "rmse_percentage_improvement": 10.005220537463813,
+    "r2_improvement_absolute": 0.1510636806488037
+  },
+  "horizon_metrics": {
+    "1h": {
+      "mae": 52.16396713256836,
+      "rmse": 76.4757544299172
+    },
+    "6h": {
+      "mae": 54.93027114868164,
+      "rmse": 79.8439395790313
+    },
+    "12h": {
+      "mae": 56.84835433959961,
+      "rmse": 82.40900521560128
+    },
+    "24h": {
+      "mae": 55.769989013671875,
+      "rmse": 81.17761198446281
+    },
+    "48h": {
+      "mae": 57.37846755981445,
+      "rmse": 83.21356888678072
+    },
+    "72h": {
+      "mae": 57.21786880493164,
+      "rmse": 83.21656141508132
+    }
+  },
+  "high_pollution_metrics": {
+    "qualifying_samples": 12662,
+    "mae": 219.7788848876953,
+    "rmse": 235.44525637608416,
+    "bias": -219.66114807128906,
+    "mean_pred": 198.27432250976562,
+    "max_pred": 490.18743896484375,
+    "mean_actual": 417.93548583984375,
+    "max_actual": 818.25,
+    "spike_capture_ratio": 0.4744136929512024
+  },
+  "regime_metrics": {
+    "< 100 \u00b5g/m\u00b3": {
+      "sample_count": 115494,
+      "mae": 35.30604553222656,
+      "rmse": 48.92795045715179,
+      "bias": 30.045879364013672
+    },
+    "100\u2013200 \u00b5g/m\u00b3": {
+      "sample_count": 72086,
+      "mae": 42.37593460083008,
+      "rmse": 54.09594341306934,
+      "bias": -9.519242286682129
+    },
+    "200\u2013345 \u00b5g/m\u00b3": {
+      "sample_count": 44054,
+      "mae": 89.1331787109375,
+      "rmse": 103.93199868934735,
+      "bias": -83.14733123779297
+    },
+    ">= 345 \u00b5g/m\u00b3": {
+      "sample_count": 12662,
+      "mae": 219.7788848876953,
+      "rmse": 235.44525637608416,
+      "bias": -219.66114807128906
+    }
+  },
+  "statistical_significance": {
+    "Proposed_vs_TCN": {
+      "mae_diff": -4.528228759765625,
+      "t_statistic": -56.715309143066406,
+      "p_value_ttest": 0.0,
+      "p_value_wilcoxon": 3.717357349049391e-16,
+      "statistically_significant": true
+    },
+    "Proposed_vs_Persistence": {
+      "mae_diff": -18.756763458251953,
+      "t_statistic": -132.3918914794922,
+      "p_value_ttest": 0.0,
+      "p_value_wilcoxon": 0.0,
+      "statistically_significant": true
+    }
+  }
+}

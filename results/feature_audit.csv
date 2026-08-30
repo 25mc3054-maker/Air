@@ -1,0 +1,50 @@
+feature_name,source,unit,feature_group,target_or_input,real_time_safe,missing_percentage
+pm25,CPCB / DPCC Anand Vihar Station,µg/m³,pollution,target_and_input,YES,0.00%
+pm10,CPCB / DPCC Anand Vihar Station,µg/m³,pollution,target_and_input,YES,5.70%
+no,CPCB / DPCC Anand Vihar Station,µg/m³,pollution,input,YES,10.41%
+no2,CPCB / DPCC Anand Vihar Station,µg/m³,pollution,target_and_input,YES,5.84%
+nox,CPCB / DPCC Anand Vihar Station,µg/m³,pollution,input,YES,10.89%
+nh3,CPCB / DPCC Anand Vihar Station,µg/m³,pollution,target_and_input,YES,7.50%
+so2,CPCB / DPCC Anand Vihar Station,µg/m³,pollution,target_and_input,YES,6.98%
+co,CPCB / DPCC Anand Vihar Station,mg/m³,pollution,target_and_input,YES,10.09%
+o3,CPCB / DPCC Anand Vihar Station,µg/m³,pollution,target_and_input,YES,5.11%
+temperature_c,ERA5 Reanalysis / Station Weather,°C,meteorology,input,YES,2.44%
+relative_humidity,ERA5 Reanalysis / Station Weather,%,meteorology,input,YES,0.37%
+wind_speed,ERA5 Reanalysis / Station Weather,m/s,meteorology,input,YES,1.36%
+wind_direction,ERA5 Reanalysis / Station Weather,degrees,meteorology,input,YES,1.68%
+rainfall,ERA5 Reanalysis / Station Weather,mm,meteorology,input,YES,99.46%
+solar_radiation,ERA5 Reanalysis / Station Weather,W/m²,meteorology,input,YES,2.16%
+pressure_mmhg,ERA5 Reanalysis / Station Weather,mmHg,meteorology,input,YES,6.25%
+cams_pm25_ugm3,ECMWF CAMS EAC4,µg/m³,atmospheric/external,input,YES,11.44%
+cams_pm10_ugm3,ECMWF CAMS EAC4,µg/m³,atmospheric/external,input,YES,11.44%
+cams_aod550,ECMWF CAMS EAC4,dimensionless (AOD at 550nm),atmospheric/external,input,YES,11.44%
+fire_count_25km,NASA FIRMS VIIRS/MODIS,count,atmospheric/external,input,YES,0.00%
+fire_frp_25km,NASA FIRMS VIIRS/MODIS,MW,atmospheric/external,input,YES,0.00%
+fire_count_50km,NASA FIRMS VIIRS/MODIS,count,atmospheric/external,input,YES,0.00%
+fire_frp_50km,NASA FIRMS VIIRS/MODIS,MW,atmospheric/external,input,YES,0.00%
+fire_count_100km,NASA FIRMS VIIRS/MODIS,count,atmospheric/external,input,YES,0.00%
+fire_frp_100km,NASA FIRMS VIIRS/MODIS,MW,atmospheric/external,input,YES,0.00%
+hour_sin,Derived Temporal,dimensionless (sine/cosine),temporal,input,YES,0.00%
+hour_cos,Derived Temporal,dimensionless (sine/cosine),temporal,input,YES,0.00%
+dayofweek_sin,Derived Temporal,dimensionless (sine/cosine),temporal,input,YES,0.00%
+dayofweek_cos,Derived Temporal,dimensionless (sine/cosine),temporal,input,YES,0.00%
+dayofyear_sin,Derived Temporal,dimensionless (sine/cosine),temporal,input,YES,0.00%
+dayofyear_cos,Derived Temporal,dimensionless (sine/cosine),temporal,input,YES,0.00%
+month_sin,Derived Temporal,dimensionless (sine/cosine),temporal,input,YES,0.00%
+month_cos,Derived Temporal,dimensionless (sine/cosine),temporal,input,YES,0.00%
+wind_dir_sin,Derived Local Vectoring,dimensionless (sine/cosine),meteorology,input,YES,1.68%
+wind_dir_cos,Derived Local Vectoring,dimensionless (sine/cosine),meteorology,input,YES,1.68%
+wind_u_local,Derived Local Vectoring,m/s,meteorology,input,YES,1.68%
+wind_v_local,Derived Local Vectoring,m/s,meteorology,input,YES,1.68%
+gee_wind_speed_change_1d,Google Earth Engine (GEE),m/s,meteorology,input,YES,0.00%
+temp_change_24h,ERA5 Reanalysis / Station Weather,°C,meteorology,input,YES,7.47%
+pressure_change_24h,ERA5 Reanalysis / Station Weather,mmHg,meteorology,input,YES,11.00%
+pm25_available,Derived Data Quality Indicator,binary/count flag,other,input,YES,0.00%
+pollutant_count_available,Derived Data Quality Indicator,binary/count flag,other,input,YES,0.00%
+gee_precipitation_m,Google Earth Engine (GEE),m,meteorology,input,YES,0.00%
+gee_surface_pressure_pa,Google Earth Engine (GEE),Pa,meteorology,input,YES,0.00%
+gee_temp_kelvin,Google Earth Engine (GEE),K,meteorology,input,YES,0.00%
+gee_u_wind,Google Earth Engine (GEE),m/s,meteorology,input,YES,0.00%
+gee_v_wind,Google Earth Engine (GEE),m/s,meteorology,input,YES,0.00%
+gee_temp_celsius,Google Earth Engine (GEE),°C,meteorology,input,YES,0.00%
+gee_wind_speed,Google Earth Engine (GEE),m/s,meteorology,input,YES,0.00%

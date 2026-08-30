@@ -1,0 +1,25 @@
+{
+  "loss_name": "SpikeAwareForecastLoss",
+  "primary_loss_component": "MSE (Mean Squared Error)",
+  "physical_spike_threshold_ugm3": 345.0,
+  "scaled_spike_threshold": 1.4410,
+  "spike_weight_multiplier": 3.0,
+  "loss_weights": {
+    "base_mse_weight": 1.0,
+    "alpha_spike_weighted_mse_weight": 0.5,
+    "beta_auxiliary_bce_weight": 0.2
+  },
+  "auxiliary_spike_head": {
+    "enabled": true,
+    "activation": "Sigmoid",
+    "target_mapping": "Binary Spike Mask (y_scaled >= 1.4410)"
+  },
+  "formula": "L_total = L_base_mse + alpha * L_spike_weighted_mse + beta * L_aux_bce",
+  "hyperparameter_justifications": {
+    "physical_spike_threshold_ugm3": "Derived strictly from training target distribution 90th percentile (345.00 ug/m3).",
+    "scaled_spike_threshold": "Transformed using training target scaler: (345.00 - 157.0570) / 130.4275 = 1.4410.",
+    "spike_weight_multiplier": "Multiplies squared error penalty by 3.0x during severe pollution episodes to counteract baseline variance compression.",
+    "alpha_spike_weighted_mse_weight": "Set to 0.5 to balance primary MSE stability with spike gradient emphasis.",
+    "beta_auxiliary_bce_weight": "Set to 0.2 to provide regularizing auxiliary spike detection gradients without dominating regression loss."
+  }
+}
