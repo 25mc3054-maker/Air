@@ -1,6 +1,8 @@
 {
+  "outputDirectory": "dashboard",
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/dashboard/index.html" },
-    { "source": "/(.*)", "destination": "/dashboard/$1" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/$1" }
   ]
 }

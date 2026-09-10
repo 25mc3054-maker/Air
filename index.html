@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIH 2026 — 72-Hour Deep Learning Air Quality Forecasting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Header Navigation -->
+        <header class="app-header">
+            <div class="header-brand">
+                <div class="brand-logo">AQI-AI</div>
+                <div>
+                    <h1>72-Hour PM2.5 Air Quality Forecast System</h1>
+                    <p class="subtitle">Smart India Hackathon 2026 | Deep Learning Multi-Branch Temporal Architecture</p>
+                </div>
+            </div>
+            <div class="header-badge">
+                <span class="status-indicator"></span>
+                <span>Model Champion: Coupled Multi-Branch (819,874 Params)</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-grid">
+            <!-- Left Sidebar Controls & Overview -->
+            <aside class="sidebar">
+                <div class="card control-card">
+                    <h2>Demo Forecast Control</h2>
+                    <p class="card-desc">Execute inference on 2023 test set sequence samples.</p>
+                    
+                    <div class="form-group">
+                        <label for="sample-select">Select Test Sequence Sample:</label>
+                        <select id="sample-select" class="form-control">
+                            <option value="1493">Sample #1493 — Typical Forecast (Median MAE)</option>
+                            <option value="2708">Sample #2708 — Excellent Forecast (Low MAE)</option>
+                            <option value="1686">Sample #1686 — Moderate Episode (150-250 µg/m³)</option>
+                            <option value="1927">Sample #1927 — Severe Episode (345-500 µg/m³)</option>
+                            <option value="123">Sample #123 — Extreme Spike (> 700 µg/m³)</option>
+                        </select>
+                    </div>
+
+                    <button id="run-forecast-btn" class="btn btn-primary">
+                        <span>⚡ Run 72-Hour Forecast</span>
+                    </button>
+                </div>
+
+                <!-- KPI Metric Cards -->
+                <div class="card kpi-card">
+                    <div class="kpi-label">72-Hour Average PM2.5</div>
+                    <div class="kpi-value" id="kpi-avg-pm25">-- <span class="unit">µg/m³</span></div>
+                    <div class="badge-container">
+                        <span class="cpcb-badge" id="kpi-cpcb-badge">--</span>
+                    </div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-label">Peak Predicted PM2.5</div>
+                    <div class="kpi-value" id="kpi-peak-pm25">-- <span class="unit">µg/m³</span></div>
+                    <div class="kpi-sub" id="kpi-peak-time">Peak Time: --</div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-label">Spike Probability Index</div>
+                    <div class="kpi-value" id="kpi-spike-prob">--</div>
+                    <div class="kpi-sub">Auxiliary Classifier Output</div>
+                </div>
+            </aside>
+
+            <!-- Right Main Visualization Area -->
+            <section class="main-content">
+                <!-- Chart Container -->
+                <div class="card chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <h2>72-Hour Forecast Trajectory (PM2.5 Concentration)</h2>
+                            <p class="card-desc">Coupled Multi-Branch Forecast vs TCN Baseline</p>
+                        </div>
+                        <div class="chart-legend-custom">
+                            <span class="legend-item"><span class="legend-color color-proposed"></span> Proposed Model</span>
+                            <span class="legend-item"><span class="legend-color color-tcn"></span> TCN Baseline</span>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="forecastChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Leaderboard & Verified Metrics -->
+                <div class="card leaderboard-card">
+                    <h2>Verified Final Model Benchmark Leaderboard</h2>
+                    <p class="card-desc">Evaluated on untouched 2023 Test Set (3,393 sequences, 244,296 timesteps)</p>
+                    
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Model / Baseline</th>
+                                    <th>Parameters</th>
+                                    <th>MAE (µg/m³)</th>
+                                    <th>RMSE (µg/m³)</th>
+                                    <th>R² Score</th>
+                                    <th>WMAPE</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight-row">
+                                    <td><strong>Proposed Multi-Branch Model</strong></td>
+                                    <td><code>819,874</code></td>
+                                    <td><strong>56.66</strong></td>
+                                    <td><strong>82.56</strong></td>
+                                    <td><strong>0.3564</strong></td>
+                                    <td>41.11%</td>
+                                    <td><span class="badge badge-success">Rank #1 Champion</span></td>
+                                </tr>
+                                <tr>
+                                    <td>TCN Champion Baseline</td>
+                                    <td><code>570,625</code></td>
+                                    <td>61.19</td>
+                                    <td>91.74</td>
+                                    <td>0.2053</td>
+                                    <td>44.40%</td>
+                                    <td><span class="badge badge-secondary">Rank #2</span></td>
+                                </tr>
+                                <tr>
+                                    <td>LSTM Baseline (B7)</td>
+                                    <td><code>223,873</code></td>
+                                    <td>74.48</td>
+                                    <td>102.18</td>
+                                    <td>0.0142</td>
+                                    <td>54.05%</td>
+                                    <td><span class="badge badge-secondary">Rank #3</span></td>
+                                </tr>
+                                <tr>
+                                    <td>GRU Baseline (B6)</td>
+                                    <td><code>167,937</code></td>
+                                    <td>75.10</td>
+                                    <td>111.16</td>
+                                    <td>-0.1667</td>
+                                    <td>54.49%</td>
+                                    <td><span class="badge badge-secondary">Rank #4</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Naive Persistence</td>
+                                    <td>N/A</td>
+                                    <td>75.42</td>
+                                    <td>107.00</td>
+                                    <td>-0.0810</td>
+                                    <td>54.73%</td>
+                                    <td><span class="badge badge-secondary">Rank #5</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Honest Limitations Callout -->
+                    <div class="alert alert-info">
+                        <strong>Honest Horizon Insights:</strong> The Proposed Model wins at all multi-step horizons from <strong>+6h to +72h</strong>. However, the Naive Persistence baseline remains stronger at <strong>+1h</strong> (MAE 21.02 vs 52.16 µg/m³) due to immediate autocorrelation.
+                    </div>
+                </div>
+
+                <!-- How It Works Section -->
+                <div class="card architecture-card">
+                    <h2>How It Works — Model Architecture Specification</h2>
+                    <div class="architecture-grid">
+                        <div class="arch-box">
+                            <h3>1. Domain Feature Branches</h3>
+                            <p>Processes 49 temporal inputs across 4 domain-specific causal convolutional streams (Pollution, Meteorology, Atmospheric External, Temporal/Availability).</p>
+                        </div>
+                        <div class="arch-box">
+                            <h3>2. Gated Linear Unit Fusion</h3>
+                            <p>Combines branch representations (224 channels) into a unified 256-dimensional non-linear representation vector with feature gating.</p>
+                        </div>
+                        <div class="arch-box">
+                            <h3>3. 4-Head Self-Attention</h3>
+                            <p>Dynamically models multi-day temporal dependencies across the 72-hour context window without future temporal leakage.</p>
+                        </div>
+                        <div class="arch-box">
+                            <h3>4. Dual Output Heads</h3>
+                            <p>Parallel linear projection for 72-hour regression forecast + auxiliary BCE classification head for PM2.5 spike detection (≥ 345 µg/m³).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
