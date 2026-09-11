@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIH 2026 — 72-Hour Deep Learning Air Quality Forecasting</title>
+    <title>SIH 2026 — 72-Hour Air Quality & AQI Forecasting System</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css">
@@ -15,22 +15,36 @@
             <div class="header-brand">
                 <div class="brand-logo">AQI-AI</div>
                 <div>
-                    <h1>72-Hour PM2.5 Air Quality Forecast System</h1>
-                    <p class="subtitle">Smart India Hackathon 2026 | Deep Learning Multi-Branch Temporal Architecture</p>
+                    <h1>72-Hour Coupled Air Quality & AQI Forecast System</h1>
+                    <p class="subtitle">Smart India Hackathon 2026 | Delhi NCR Focus | Multi-Branch Deep Learning</p>
                 </div>
             </div>
-            <div class="header-badge">
-                <span class="status-indicator"></span>
-                <span>Model Champion: Coupled Multi-Branch (819,874 Params)</span>
+            <div class="header-badges">
+                <div class="header-badge">
+                    <span class="status-indicator"></span>
+                    <span>Model: Coupled Multi-Branch (819,874 Frozen Params)</span>
+                </div>
+                <div class="header-badge mode-badge">
+                    <span>Mode: Verified Historical Test-Set Demonstration</span>
+                </div>
             </div>
         </header>
 
+        <!-- Main Navigation Tabs -->
+        <nav class="dashboard-tabs">
+            <button class="tab-btn active" data-tab="tab-aqi">AQI FORECAST</button>
+            <button class="tab-btn" data-tab="tab-pm25">PM2.5 DETAILS</button>
+            <button class="tab-btn" data-tab="tab-meteo">METEOROLOGY & INVERSION</button>
+            <button class="tab-btn" data-tab="tab-risk">POLLUTION RISK & STUBBLE</button>
+            <button class="tab-btn" data-tab="tab-performance">MODEL PERFORMANCE</button>
+        </nav>
+
         <!-- Main Dashboard Content -->
         <main class="dashboard-grid">
-            <!-- Left Sidebar Controls & Overview -->
+            <!-- Left Sidebar Controls & KPI Overview -->
             <aside class="sidebar">
                 <div class="card control-card">
-                    <h2>Demo Forecast Control</h2>
+                    <h2>Demo Sequence Control</h2>
                     <p class="card-desc">Execute inference on 2023 test set sequence samples.</p>
                     
                     <div class="form-group">
@@ -49,143 +63,226 @@
                     </button>
                 </div>
 
-                <!-- KPI Metric Cards -->
+                <!-- KPI Cards -->
                 <div class="card kpi-card">
-                    <div class="kpi-label">72-Hour Average PM2.5</div>
-                    <div class="kpi-value" id="kpi-avg-pm25">-- <span class="unit">µg/m³</span></div>
+                    <div class="kpi-label">72-Hour Forecasted AQI (PM2.5-Derived)</div>
+                    <div class="kpi-value" id="kpi-avg-aqi">--</div>
                     <div class="badge-container">
                         <span class="cpcb-badge" id="kpi-cpcb-badge">--</span>
                     </div>
+                    <div class="kpi-sub">Official CPCB PM2.5 Linear Sub-Index</div>
                 </div>
 
                 <div class="card kpi-card">
-                    <div class="kpi-label">Peak Predicted PM2.5</div>
-                    <div class="kpi-value" id="kpi-peak-pm25">-- <span class="unit">µg/m³</span></div>
-                    <div class="kpi-sub" id="kpi-peak-time">Peak Time: --</div>
+                    <div class="kpi-label">Current / Starting PM2.5</div>
+                    <div class="kpi-value" id="kpi-start-pm25">-- <span class="unit">µg/m³</span></div>
+                    <div class="kpi-sub">Initial observation from sequence input</div>
                 </div>
 
                 <div class="card kpi-card">
-                    <div class="kpi-label">Spike Probability Index</div>
-                    <div class="kpi-value" id="kpi-spike-prob">--</div>
-                    <div class="kpi-sub">Auxiliary Classifier Output</div>
+                    <div class="kpi-label">Peak Forecast AQI & Hour</div>
+                    <div class="kpi-value" id="kpi-peak-aqi">--</div>
+                    <div class="kpi-sub" id="kpi-peak-time">Peak PM2.5: -- µg/m³ (+--h)</div>
+                    <div id="kpi-peak-pm25" style="display:none;"></div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-label">Pollution Trapping Risk</div>
+                    <div class="kpi-value kpi-small" id="kpi-trapping-risk">--</div>
+                    <div class="kpi-sub">Boundary Layer Dispersion Dynamics</div>
+                </div>
+
+                <div class="card kpi-card">
+                    <div class="kpi-label">Regional Biomass Burning Influence</div>
+                    <div class="kpi-value kpi-small" id="kpi-stubble-influence">--</div>
+                    <div class="kpi-sub">MODIS / VIIRS FRP Detections</div>
                 </div>
             </aside>
 
-            <!-- Right Main Visualization Area -->
+            <!-- Right Main Visualization & Content Area -->
             <section class="main-content">
-                <!-- Chart Container -->
-                <div class="card chart-card">
-                    <div class="chart-header">
-                        <div>
-                            <h2>72-Hour Forecast Trajectory (PM2.5 Concentration)</h2>
-                            <p class="card-desc">Coupled Multi-Branch Forecast vs TCN Baseline</p>
+                
+                <!-- TAB 1: AQI FORECAST -->
+                <div class="tab-content active" id="tab-aqi">
+                    <div class="card chart-card">
+                        <div class="chart-header">
+                            <div>
+                                <h2 id="chart-title">72-Hour Forecast Trajectory (PM2.5-Derived AQI Sub-Index)</h2>
+                                <p class="card-desc" id="chart-subtitle">Coupled Multi-Branch Model Forecast vs TCN Baseline</p>
+                            </div>
+                            <div class="chart-actions">
+                                <button id="toggle-chart-btn" class="btn btn-secondary btn-sm">
+                                    🔄 Switch to PM2.5 Concentration Graph
+                                </button>
+                            </div>
                         </div>
-                        <div class="chart-legend-custom">
-                            <span class="legend-item"><span class="legend-color color-proposed"></span> Proposed Model</span>
-                            <span class="legend-item"><span class="legend-color color-tcn"></span> TCN Baseline</span>
+                        <div class="chart-wrapper">
+                            <canvas id="forecastChart"></canvas>
                         </div>
-                    </div>
-                    <div class="chart-wrapper">
-                        <canvas id="forecastChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Leaderboard & Verified Metrics -->
-                <div class="card leaderboard-card">
-                    <h2>Verified Final Model Benchmark Leaderboard</h2>
-                    <p class="card-desc">Evaluated on untouched 2023 Test Set (3,393 sequences, 244,296 timesteps)</p>
-                    
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Model / Baseline</th>
-                                    <th>Parameters</th>
-                                    <th>MAE (µg/m³)</th>
-                                    <th>RMSE (µg/m³)</th>
-                                    <th>R² Score</th>
-                                    <th>WMAPE</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="highlight-row">
-                                    <td><strong>Proposed Multi-Branch Model</strong></td>
-                                    <td><code>819,874</code></td>
-                                    <td><strong>56.66</strong></td>
-                                    <td><strong>82.56</strong></td>
-                                    <td><strong>0.3564</strong></td>
-                                    <td>41.11%</td>
-                                    <td><span class="badge badge-success">Rank #1 Champion</span></td>
-                                </tr>
-                                <tr>
-                                    <td>TCN Champion Baseline</td>
-                                    <td><code>570,625</code></td>
-                                    <td>61.19</td>
-                                    <td>91.74</td>
-                                    <td>0.2053</td>
-                                    <td>44.40%</td>
-                                    <td><span class="badge badge-secondary">Rank #2</span></td>
-                                </tr>
-                                <tr>
-                                    <td>LSTM Baseline (B7)</td>
-                                    <td><code>223,873</code></td>
-                                    <td>74.48</td>
-                                    <td>102.18</td>
-                                    <td>0.0142</td>
-                                    <td>54.05%</td>
-                                    <td><span class="badge badge-secondary">Rank #3</span></td>
-                                </tr>
-                                <tr>
-                                    <td>GRU Baseline (B6)</td>
-                                    <td><code>167,937</code></td>
-                                    <td>75.10</td>
-                                    <td>111.16</td>
-                                    <td>-0.1667</td>
-                                    <td>54.49%</td>
-                                    <td><span class="badge badge-secondary">Rank #4</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Naive Persistence</td>
-                                    <td>N/A</td>
-                                    <td>75.42</td>
-                                    <td>107.00</td>
-                                    <td>-0.0810</td>
-                                    <td>54.73%</td>
-                                    <td><span class="badge badge-secondary">Rank #5</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Honest Limitations Callout -->
-                    <div class="alert alert-info">
-                        <strong>Honest Horizon Insights:</strong> The Proposed Model wins at all multi-step horizons from <strong>+6h to +72h</strong>. However, the Naive Persistence baseline remains stronger at <strong>+1h</strong> (MAE 21.02 vs 52.16 µg/m³) due to immediate autocorrelation.
-                    </div>
-                </div>
-
-                <!-- How It Works Section -->
-                <div class="card architecture-card">
-                    <h2>How It Works — Model Architecture Specification</h2>
-                    <div class="architecture-grid">
-                        <div class="arch-box">
-                            <h3>1. Domain Feature Branches</h3>
-                            <p>Processes 49 temporal inputs across 4 domain-specific causal convolutional streams (Pollution, Meteorology, Atmospheric External, Temporal/Availability).</p>
-                        </div>
-                        <div class="arch-box">
-                            <h3>2. Gated Linear Unit Fusion</h3>
-                            <p>Combines branch representations (224 channels) into a unified 256-dimensional non-linear representation vector with feature gating.</p>
-                        </div>
-                        <div class="arch-box">
-                            <h3>3. 4-Head Self-Attention</h3>
-                            <p>Dynamically models multi-day temporal dependencies across the 72-hour context window without future temporal leakage.</p>
-                        </div>
-                        <div class="arch-box">
-                            <h3>4. Dual Output Heads</h3>
-                            <p>Parallel linear projection for 72-hour regression forecast + auxiliary BCE classification head for PM2.5 spike detection (≥ 345 µg/m³).</p>
+                        <div class="alert alert-info disclaimer-banner">
+                            <strong>CPCB AQI Compliance Notice:</strong> Displayed AQI is the <em>PM2.5-derived AQI Sub-Index</em> calculated using official CPCB linear interpolation breakpoints. Overall CPCB AQI requires applicable sub-indices across all criteria pollutants (PM10, NO2, O3, SO2, CO, NH3, Pb).
                         </div>
                     </div>
                 </div>
+
+                <!-- TAB 2: PM2.5 DETAILS -->
+                <div class="tab-content" id="tab-pm25">
+                    <div class="card">
+                        <h2>72-Hour PM2.5 Concentration Breakdown (µg/m³)</h2>
+                        <p class="card-desc">Detailed physical target prediction generated by the primary forecast head.</p>
+                        
+                        <div class="grid-3">
+                            <div class="stat-box">
+                                <span class="stat-label">Minimum Forecast PM2.5</span>
+                                <span class="stat-val" id="pm25-min-val">-- µg/m³</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Average Forecast PM2.5</span>
+                                <span class="stat-val" id="pm25-avg-val">-- µg/m³</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Maximum Forecast PM2.5</span>
+                                <span class="stat-val" id="pm25-max-val">-- µg/m³</span>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <strong>Physical Scale Note:</strong> PM2.5 values are inverse-transformed using training set scalers. The model parameter weights remain 100% frozen.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: METEOROLOGY & INVERSION -->
+                <div class="tab-content" id="tab-meteo">
+                    <div class="card">
+                        <h2>Meteorological & Atmospheric Boundary Dynamics</h2>
+                        <p class="card-desc">Coupled weather interaction indicators evaluated across the historical input window.</p>
+                        
+                        <div class="grid-2">
+                            <div class="met-box">
+                                <h3>Atmospheric Inversion Status</h3>
+                                <div class="status-value text-amber" id="met-inversion">Unavailable (Requires 850hPa vs Surface Temp Profile)</div>
+                                <p class="met-desc">Calculated when multi-level vertical temperature profile data is available. Currently, input features supply surface temperature dynamics.</p>
+                            </div>
+                            <div class="met-box">
+                                <h3>Planetary Boundary Layer (PBL) Height</h3>
+                                <div class="status-value text-amber" id="met-pblh">Unavailable (Requires ERA5 PBLH Data)</div>
+                                <p class="met-desc">Lower PBL height severely restricts vertical pollutant dispersion, trapping surface emissions during winter morning hours.</p>
+                            </div>
+                            <div class="met-box">
+                                <h3>Pollution Trapping Potential</h3>
+                                <div class="status-value" id="met-trapping">--</div>
+                                <p class="met-desc">Derived from surface wind speed and thermal stability trends. Low wind speeds (&lt; 1.5 m/s) indicate strong boundary layer trapping potential.</p>
+                            </div>
+                            <div class="met-box">
+                                <h3>Historical Input Wind Conditions</h3>
+                                <div class="status-value" id="met-wind">-- m/s</div>
+                                <p class="met-desc">Average surface wind speed across 72-hour context window driving regional advection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: POLLUTION RISK & STUBBLE -->
+                <div class="tab-content" id="tab-risk">
+                    <div class="card">
+                        <h2>Pollution Risk & Regional Biomass Burning Assessment</h2>
+                        <p class="card-desc">Evaluation of extreme episode risks and stubble burning influence.</p>
+                        
+                        <div class="grid-2">
+                            <div class="risk-box">
+                                <h3>Extreme Pollution Risk Indicator</h3>
+                                <div class="risk-value" id="risk-spike-val">--% Avg Probability</div>
+                                <div class="alert alert-warning" style="margin-top: 10px;">
+                                    <strong>Classifier Limitation Disclosure:</strong> The auxiliary spike classification head predicts episodes &ge; 345 µg/m³. Due to class imbalance, recall is limited (~15%). It should be treated as an auxiliary risk indicator, not a primary alert trigger.
+                                </div>
+                            </div>
+
+                            <div class="risk-box">
+                                <h3>Regional Biomass / Stubble Burning Influence</h3>
+                                <div class="risk-value" id="risk-stubble-val">--</div>
+                                <p class="met-desc">Derived from actual MODIS & VIIRS Fire Radiative Power (FRP) and fire counts at 25km, 50km, and 100km radii present in the input feature sequence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: MODEL PERFORMANCE -->
+                <div class="tab-content" id="tab-performance">
+                    <div class="card leaderboard-card">
+                        <h2>Verified Final Model Benchmark Leaderboard</h2>
+                        <p class="card-desc">Evaluated on untouched 2023 Test Set (3,393 sequences, 244,296 timesteps)</p>
+                        
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Model / Baseline</th>
+                                        <th>Parameters</th>
+                                        <th>MAE (µg/m³)</th>
+                                        <th>RMSE (µg/m³)</th>
+                                        <th>R² Score</th>
+                                        <th>WMAPE</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="highlight-row">
+                                        <td><strong>Proposed Multi-Branch Model</strong></td>
+                                        <td><code>819,874</code></td>
+                                        <td><strong>56.66</strong></td>
+                                        <td><strong>82.56</strong></td>
+                                        <td><strong>0.3564</strong></td>
+                                        <td>41.11%</td>
+                                        <td><span class="badge badge-success">Rank #1 Champion</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TCN Champion Baseline</td>
+                                        <td><code>570,625</code></td>
+                                        <td>61.19</td>
+                                        <td>91.74</td>
+                                        <td>0.2053</td>
+                                        <td>44.40%</td>
+                                        <td><span class="badge badge-secondary">Rank #2</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LSTM Baseline (B7)</td>
+                                        <td><code>223,873</code></td>
+                                        <td>74.48</td>
+                                        <td>102.18</td>
+                                        <td>0.0142</td>
+                                        <td>54.05%</td>
+                                        <td><span class="badge badge-secondary">Rank #3</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>GRU Baseline (B6)</td>
+                                        <td><code>167,937</code></td>
+                                        <td>75.10</td>
+                                        <td>111.16</td>
+                                        <td>-0.1667</td>
+                                        <td>54.49%</td>
+                                        <td><span class="badge badge-secondary">Rank #4</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Naive Persistence</td>
+                                        <td>N/A</td>
+                                        <td>75.42</td>
+                                        <td>107.00</td>
+                                        <td>-0.0810</td>
+                                        <td>54.73%</td>
+                                        <td><span class="badge badge-secondary">Rank #5</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Honest Limitations Callout -->
+                        <div class="alert alert-info">
+                            <strong>Honest Horizon Insights:</strong> The Proposed Model wins at all multi-step forecast horizons from <strong>+6h to +72h</strong>. However, Naive Persistence remains stronger at <strong>+1h</strong> (MAE 21.02 vs 52.16 µg/m³) due to immediate autocorrelation.
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </main>
     </div>
