@@ -44,18 +44,27 @@
             <!-- Left Sidebar Controls & KPI Overview -->
             <aside class="sidebar">
                 <div class="card control-card">
-                    <h2>Demo Sequence Control</h2>
-                    <p class="card-desc">Execute inference on 2023 test set sequence samples.</p>
+                    <h2>Location & Forecast Control</h2>
+                    <p class="card-desc">Select Delhi NCR station location to execute 72-hour deep learning inference.</p>
                     
                     <div class="form-group">
-                        <label for="sample-select">Select Test Sequence Sample:</label>
+                        <label for="sample-select">📍 Select Location / Monitoring Station (Delhi NCR):</label>
                         <select id="sample-select" class="form-control">
-                            <option value="1493">Sample #1493 — Typical Forecast (Median MAE)</option>
-                            <option value="2708">Sample #2708 — Excellent Forecast (Low MAE)</option>
-                            <option value="1686">Sample #1686 — Moderate Episode (150-250 µg/m³)</option>
-                            <option value="1927">Sample #1927 — Severe Episode (345-500 µg/m³)</option>
-                            <option value="123">Sample #123 — Extreme Spike (> 700 µg/m³)</option>
+                            <option value="1493">📍 Anand Vihar, East Delhi (DPCC Station #1493 — Median Smog)</option>
+                            <option value="2708">📍 Punjabi Bagh, West Delhi (DPCC Station #2708 — Low Air Pollution)</option>
+                            <option value="1686">📍 R.K. Puram, South Delhi (CPCB Station #1686 — Moderate Winter Smog)</option>
+                            <option value="1927">📍 Jahangirpuri / Bawana, North Delhi (DPCC Station #1927 — Severe Smog)</option>
+                            <option value="123">📍 ITO Traffic Junction, Central Delhi (CPCB Station #123 — Extreme Spike)</option>
                         </select>
+                    </div>
+
+                    <div class="station-info-card" id="station-info-box" style="margin-bottom: 16px; background: rgba(30, 41, 59, 0.6); border: 1px solid var(--card-border); padding: 12px 14px; border-radius: 10px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Active Station Location</span>
+                            <span class="station-badge" id="station-authority" style="font-size: 10px; padding: 2px 8px; border-radius: 10px; background: rgba(59, 130, 246, 0.2); color: #60a5fa; font-weight: 600;">DPCC Network</span>
+                        </div>
+                        <div id="station-name" style="font-size: 14px; font-weight: 700; color: #f8fafc; margin-top: 4px;">Anand Vihar, East Delhi</div>
+                        <div id="station-coords" style="font-size: 11px; color: #94a3b8; margin-top: 2px;">Coordinates: 28.6508° N, 77.3152° E | Elevation: 218m</div>
                     </div>
 
                     <button id="run-forecast-btn" class="btn btn-primary">
