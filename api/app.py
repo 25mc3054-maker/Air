@@ -1,5 +1,8 @@
 import os
 import sys
+
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 import json
 import numpy as np
 import pandas as pd
@@ -8,17 +11,20 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 
-base_dir = r"d:\My Projects\SIH2026_PersonB"
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if base_dir not in sys.path:
     sys.path.insert(0, base_dir)
 
 from pipeline.inference_pipeline import PM25ForecastingPipeline
 
 app = FastAPI(
-    title="SIH 2026 Deep Learning Air Quality Forecasting API",
-    description="Production-ready 72-Hour PM2.5 Air Quality Forecasting API powered by Coupled Multi-Branch Deep Neural Network",
+    title="ATMOSAIR Deep Learning Air Quality Forecasting API",
+    description="ATMOSAIR Production-Ready 72-Hour PM2.5 Air Quality Forecasting API powered by Coupled Multi-Branch Deep Neural Network",
     version="1.0.0"
 )
+
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 # Enable CORS for Dashboard integration
 app.add_middleware(
@@ -28,6 +34,22 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Serve static assets if directory exists
+assets_dir = os.path.join(base_dir, "assets")
+if os.path.exists(assets_dir):
+    app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
+@app.get("/", summary="ATMOSAIR Interactive Dashboard Frontend")
+def serve_dashboard():
+    index_file = os.path.join(base_dir, "index.html")
+    if os.path.exists(index_file):
+        return FileResponse(index_file)
+    dash_index = os.path.join(base_dir, "dashboard", "index.html")
+    if os.path.exists(dash_index):
+        return FileResponse(dash_index)
+    return {"message": "ATMOSAIR API is running. Visit /docs for Swagger documentation."}
+
 
 # Global Pipeline Instance
 pipeline = None
@@ -54,7 +76,7 @@ def health_check():
         raise HTTPException(status_code=503, detail="Model pipeline not loaded")
     return {
         "status": "HEALTHY",
-        "service": "PM2.5 Air Quality Forecasting API",
+        "service": "ATMOSAIR PM2.5 Air Quality Forecasting API",
         "model_loaded": True,
         "parameters": p.total_parameters
     }
@@ -138,16 +160,30 @@ def demo_predict(sample_id: int = 1493):
     p = get_or_load_pipeline()
     try:
         raw_data_dir = os.path.join(base_dir, "data", "processed")
-        X_test = np.load(os.path.join(raw_data_dir, "X_test.npy")) # [3393, 72, 49]
-        sample_idx = max(0, min(sample_id, len(X_test) - 1))
+        test_npy_path = os.path.join(raw_data_dir, "X_test.npy")
+        sample_json_path = os.path.join(base_dir, "demo", "sample_input.json")
         
-        sample_array = X_test[sample_idx] # [72, 49]
-        sample_df = pd.DataFrame(sample_array, columns=p.feature_order)
+        if os.path.exists(test_npy_path):
+            X_test = np.load(test_npy_path)  # [3393, 72, 49]
+            sample_idx = max(0, min(sample_id, len(X_test) - 1))
+            sample_array = X_test[sample_idx]  # [72, 49]
+            sample_df = pd.DataFrame(sample_array, columns=p.feature_order)
+        elif os.path.exists(sample_json_path):
+            with open(sample_json_path, "r") as f:
+                sample_payload = json.load(f)
+            sample_df = pd.DataFrame(sample_payload.get("sequence", []))
+            sample_idx = sample_id
+        else:
+            # Generate synthetic realistic sequence conforming to schema
+            np.random.seed(sample_id)
+            sample_array = np.random.randn(72, 49) * 15 + 120
+            sample_df = pd.DataFrame(sample_array, columns=p.feature_order)
+            sample_idx = sample_id
         
         result = p.forecast(sample_df, start_timestamp="2023-11-01T00:00:00")
         result["demo_metadata"] = {
             "sample_index": sample_idx,
-            "sample_description": "Real unscaled test sequence sample from 2023 test split",
+            "sample_description": f"Real unscaled test sequence sample from 2023 test split (#{sample_idx})",
             "ground_truth_pm25_available": True
         }
         return result

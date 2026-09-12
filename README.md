@@ -1,4 +1,4 @@
-# 72-Hour PM2.5 Air Quality Forecasting System
+# ATMOSAIR — 72-Hour PM2.5 Air Quality Forecasting System
 > **Smart India Hackathon (SIH) 2026 — Person B Project**  
 > *Deep Learning Multi-Branch Temporal Architecture for Long-Horizon Environmental Forecasting*
 
@@ -7,7 +7,7 @@
 ## 1. Project Overview & Problem Statement
 Air pollution (specifically fine particulate matter $\text{PM}_{2.5}$) poses severe health risks across urban regions in India. Standard single-step autoregressive or shallow forecasting models degrade rapidly beyond 6–12 hours. 
 
-This project delivers a **72-Hour Multi-Step Direct PM2.5 Air Quality Forecasting System** powered by a custom **Coupled Multi-Branch Neural Network (`CoupledMultiBranchForecastModel`, 819,874 parameters)**. The system ingests 72 consecutive hours of 49 multi-modal environmental variables (pollution, meteorology, satellite atmospheric data, and temporal cyclic signals) to predict the complete 72-hour future trajectory of $\text{PM}_{2.5}$ concentrations in physical units ($\mu g/m^3$).
+This project delivers **ATMOSAIR: A 72-Hour Multi-Step Direct PM2.5 Air Quality Forecasting System** powered by a custom **Coupled Multi-Branch Neural Network (`CoupledMultiBranchForecastModel`, 819,874 parameters)**. The system ingests 72 consecutive hours of 49 multi-modal environmental variables (pollution, meteorology, satellite atmospheric data, and temporal cyclic signals) to predict the complete 72-hour future trajectory of $\text{PM}_{2.5}$ concentrations in physical units ($\mu g/m^3$).
 
 ---
 
@@ -122,7 +122,7 @@ SIH2026_PersonB/
 ├── configs/                     # Feature Groups & Training Configurations
 │   ├── feature_groups.json
 │   └── training_config.json
-├── dashboard/                   # Interactive SIH Demo Web Frontend
+├── dashboard/                   # Interactive ATMOSAIR Demo Web Frontend
 │   ├── index.html
 │   ├── styles.css
 │   └── app.js

@@ -1,9 +1,14 @@
 import os
 import sys
+
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 import json
 import torch
 import pandas as pd
 import numpy as np
+
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if base_dir not in sys.path:

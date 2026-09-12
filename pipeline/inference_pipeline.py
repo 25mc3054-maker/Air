@@ -1,5 +1,8 @@
 import os
 import sys
+
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 import json
 import joblib
 import numpy as np
@@ -7,7 +10,7 @@ import pandas as pd
 import torch
 from datetime import datetime, timedelta
 
-base_dir = r"d:\My Projects\SIH2026_PersonB"
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if base_dir not in sys.path:
     sys.path.insert(0, base_dir)
 
@@ -15,7 +18,7 @@ from models.proposed_model import CoupledMultiBranchForecastModel
 
 class PM25ForecastingPipeline:
     """
-    Production-ready 72-Hour PM2.5 Air Quality Forecasting Pipeline.
+    ATMOSAIR Production-ready 72-Hour PM2.5 Air Quality Forecasting Pipeline.
     Encapsulates input validation, missing value imputation, scaling, 
     neural model inference, inverse target transformation, and CPCB AQI categorization.
     """

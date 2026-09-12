@@ -1,6 +1,6 @@
-# SIH 2026 — FINAL PROJECT HANDOFF CHECKLIST
+# ATMOSAIR — FINAL PROJECT HANDOFF CHECKLIST
 
-> **Project:** 72-Hour PM2.5 Air Quality Forecasting System  
+> **Project:** ATMOSAIR 72-Hour PM2.5 Air Quality Forecasting System  
 > **Model:** Coupled Multi-Branch Forecast Model (`CoupledMultiBranchForecastModel`)  
 > **Parameters:** 819,874 Parameters  
 > **Status:** ALL SYSTEMS COMPLETED & VERIFIED  

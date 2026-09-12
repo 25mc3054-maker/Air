@@ -1,18 +1,18 @@
-# SIH 2026 — PRESENTATION PITCH DECK CONTENT (12 SLIDES)
-> **Project:** 72-Hour PM2.5 Air Quality Forecasting System  
+# ATMOSAIR — PRESENTATION PITCH DECK CONTENT (12 SLIDES)
+> **Project:** ATMOSAIR 72-Hour PM2.5 Air Quality Forecasting System  
 > **Team Role:** Person B (Deep Learning Neural Architecture & Evaluation Lead)  
 
 ---
 
 ### SLIDE 1: Title & Overview
-* **Slide Title:** Deep Learning Multi-Branch 72-Hour PM2.5 Air Quality Forecasting
+* **Slide Title:** ATMOSAIR: Deep Learning Multi-Branch 72-Hour PM2.5 Air Quality Forecasting
 * **Subtitle:** Smart India Hackathon (SIH) 2026 Pitch Deck
 * **Key Bullet Points:**
   * Direct 72-Hour Multi-Step Trajectory Prediction
   * Coupled Multi-Branch Deep Neural Network (`819,874` parameters)
   * Real-time CPCB Air Quality Categorization & Spike Detection
 * **Visual Recommendation:** Team logo, project title, and high-level neural network icon.
-* **Speaker Script:** "Good morning judges. Today we present our 72-Hour Multi-Step Direct PM2.5 Air Quality Forecasting System, built to overcome the rapid error accumulation of conventional single-step forecasting models."
+* **Speaker Script:** "Good morning judges. Today we present ATMOSAIR, our 72-Hour Multi-Step Direct PM2.5 Air Quality Forecasting System, built to overcome the rapid error accumulation of conventional single-step forecasting models."
 
 ---
 
