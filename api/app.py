@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse, Response, RedirectResponse
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 
@@ -22,9 +24,6 @@ app = FastAPI(
     description="ATMOSAIR Production-Ready 72-Hour PM2.5 Air Quality Forecasting API powered by Coupled Multi-Branch Deep Neural Network",
     version="1.0.0"
 )
-
-from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
 
 # Enable CORS for Dashboard integration
 app.add_middleware(
@@ -189,3 +188,19 @@ def demo_predict(sample_id: int = 1493):
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# Static Files & Dashboard Mounting
+dashboard_dir = os.path.join(base_dir, "dashboard")
+
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon():
+    return Response(status_code=204)
+
+@app.get("/dashboard", include_in_schema=False)
+def get_dashboard_redirect():
+    return RedirectResponse(url="/dashboard/")
+
+if os.path.exists(dashboard_dir):
+    app.mount("/dashboard", StaticFiles(directory=dashboard_dir, html=True), name="dashboard")
+    app.mount("/", StaticFiles(directory=dashboard_dir, html=True), name="root_dashboard")
+
