@@ -1,0 +1,32 @@
+{
+  "deep_model": {
+    "mae": 56.66,
+    "rmse": 82.56,
+    "bias": -14.98,
+    "r2": 0.3564,
+    "wmape": 41.11
+  },
+  "corrected_model": {
+    "mae": 59.24,
+    "rmse": 81.24,
+    "bias": 4.26,
+    "r2": 0.3768,
+    "wmape": 42.99
+  },
+  "deep_severe_regime": {
+    "mae": 219.78,
+    "rmse": 235.45,
+    "bias": -219.66,
+    "r2": -8.4086,
+    "wmape": 52.59
+  },
+  "corrected_severe_regime": {
+    "mae": 198.74,
+    "rmse": 216.86,
+    "bias": -198.29,
+    "r2": -6.9821,
+    "wmape": 47.55
+  },
+  "severe_bias_reduction_ugm3": 21.37,
+  "severe_mae_reduction_pct": 9.57
+}

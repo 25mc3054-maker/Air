@@ -16,3 +16,8 @@ Person A/*.csv
 scratch/
 .system_generated/
 *.log
+.env
+.env.local
+.cache/
+cache/
+SIH2026_PersonB/

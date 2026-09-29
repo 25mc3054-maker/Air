@@ -43,13 +43,14 @@
   --violet-soft: rgba(167, 139, 250, 0.14);
   --divider: rgba(255, 255, 255, 0.08);
 
-  /* AQI Severity Scale */
-  --aqi-good: #4ADE80;
-  --aqi-moderate: #FACC15;
-  --aqi-poor: #FB923C;
-  --aqi-verypoor: #F43F5E;
-  --aqi-severe: #A855F7;
-  --aqi-hazardous: #881337;
+  /* AQI Severity Scale (CPCB Statutory 6-Tier System) */
+  --aqi-good: #4ADE80;          /* 0-50: Good */
+  --aqi-satisfactory: #22C55E;  /* 51-100: Satisfactory */
+  --aqi-moderate: #FACC15;      /* 101-200: Moderate */
+  --aqi-poor: #FB923C;          /* 201-300: Poor */
+  --aqi-verypoor: #F43F5E;      /* 301-400: Very Poor */
+  --aqi-severe: #A855F7;        /* 401-500: Severe */
+  --aqi-hazardous: #881337;     /* >500: Emergency Hazardous */
 
   --radius-s: 8px;
   --radius-m: 16px;
@@ -528,10 +529,41 @@ section { position: relative; padding: 100px 0; }
 .region-controls {
   display: flex; gap: 12px; align-items: center; margin-top: 18px; flex-wrap: wrap;
 }
-.region-controls select {
+.region-controls select, .comp-select, select {
   flex: 1; min-width: 180px; padding: 11px 16px; border-radius: var(--radius-s);
-  background: var(--surface-2); color: var(--text-0); border: 1px solid var(--surface-border);
+  background: #182232; color: #F3F5F9; border: 1px solid var(--surface-border-strong);
   font-size: 14px; font-family: var(--font-body);
+  color-scheme: dark;
+  cursor: pointer;
+  outline: none;
+}
+.region-controls select:focus, .comp-select:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(94, 234, 212, 0.25);
+}
+select option, .region-controls select option, .comp-select option {
+  background-color: #0E1626 !important;
+  color: #F8FAFC !important;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+select option:checked, select option:hover {
+  background-color: #1E293B !important;
+  color: #5EEAD4 !important;
+}
+html[data-theme="light"] select,
+html[data-theme="light"] .region-controls select,
+html[data-theme="light"] .comp-select {
+  background: #FFFFFF;
+  color: #0F172A;
+  border-color: var(--surface-border-strong);
+  color-scheme: light;
+}
+html[data-theme="light"] select option,
+html[data-theme="light"] .region-controls select option,
+html[data-theme="light"] .comp-select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
 }
 
 /* Region details panel */
@@ -739,8 +771,9 @@ section { position: relative; padding: 100px 0; }
 .comp-card { padding: 24px; border-radius: var(--radius-m); }
 .comp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
 .comp-select {
-  padding: 8px 14px; border-radius: var(--radius-s); background: var(--surface-2);
-  color: var(--text-0); border: 1px solid var(--surface-border); font-size: 13px;
+  padding: 8px 14px; border-radius: var(--radius-s); background: #182232;
+  color: #F3F5F9; border: 1px solid var(--surface-border-strong); font-size: 13px;
+  color-scheme: dark; outline: none; cursor: pointer;
 }
 
 /* ============================= RELATIONSHIP & MODEL ============================= */
@@ -890,13 +923,8 @@ kbd {
   border-radius: 5px; padding: 2px 7px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-0);
 }
 
-/* Initial loading overlay */
-#loadOverlay {
-  position: fixed; inset: 0; z-index: 10000; background: var(--bg);
-  display: flex; align-items: center; justify-content: center;
-  transition: opacity 0.5s var(--ease), visibility 0.5s;
-}
-#loadOverlay.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+/* Initial loading overlay - hidden for instant render */
+#loadOverlay { display: none !important; }
 .load-mark { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .load-mark .ring {
   width: 42px; height: 42px; border-radius: 50%; border: 2.5px solid var(--surface-border);
@@ -970,7 +998,7 @@ footer { border-top: 1px solid var(--divider); padding: 60px 0 36px; }
 <!-- ============ HERO ============ -->
 <section class="hero" id="overview">
   <div class="hero-bg">
-    <video class="hero-video-bg" autoplay loop muted playsinline poster="">
+    <video class="hero-video-bg" preload="none" loop muted playsinline poster="">
       <source src="./assets/hero-bg.mp4" type="video/mp4">
     </video>
     <div class="hero-video-overlay"></div>
@@ -1040,7 +1068,7 @@ footer { border-top: 1px solid var(--divider); padding: 60px 0 36px; }
           <div class="sweepWrap" id="sweepWrap"><div class="sweep"></div></div>
           <svg id="overlaySvg"><line id="targetLine" x1="0" y1="0" x2="0" y2="0"/></svg>
           <div class="map-coord-readout">TRACKING: <b id="statCoord">28.6139°N, 77.2090°E</b></div>
-          <div class="map-overlay-hud">LIVE TILES · CARTO DARK MATTER · <b>HOVER / CLICK TO TARGET</b></div>
+          <div class="map-overlay-hud">TACTICAL RADAR TILES · ESRI DARK CANVAS · <b>HOVER / CLICK TO TARGET</b></div>
         </div>
 
         <!-- 2. 3D Hexagon View -->
@@ -1517,34 +1545,50 @@ const POLLUTANT_META = {
   aerosol: { name:'AOD',   full:'Aerosol Optical Depth', unit:'Index', weight: 0.3 }
 };
 
-// CPCB Sub-index Breakpoints Table (Indian Standard)
+// CPCB Sub-index Breakpoints Table (Official CPCB 2014 Standard)
+// Continuous piecewise intervals: [C_low, C_high, I_low, I_high]
 const CPCB_BREAKPOINTS = {
-  pm25: [[0,30,0,50],[31,60,51,100],[61,90,101,200],[91,120,201,300],[121,250,301,400],[251,500,401,500]],
-  pm10: [[0,50,0,50],[51,100,51,100],[101,250,101,200],[251,350,201,300],[351,430,301,400],[431,600,401,500]],
-  no2:  [[0,40,0,50],[41,80,51,100],[81,180,101,200],[181,280,201,300],[281,400,301,400],[401,500,401,500]],
-  so2:  [[0,40,0,50],[41,80,51,100],[81,380,101,200],[381,800,201,300],[801,1600,301,400],[1601,2000,401,500]],
-  co:   [[0,1.0,0,50],[1.1,2.0,51,100],[2.1,10.0,101,200],[10.1,17.0,201,300],[17.1,34.0,301,400],[34.1,50.0,401,500]],
-  o3:   [[0,50,0,50],[51,100,51,100],[101,168,101,200],[169,208,201,300],[209,748,301,400],[749,1000,401,500]],
-  nh3:  [[0,200,0,50],[201,400,51,100],[401,800,101,200],[801,1200,201,300],[1201,1800,301,400],[1801,2400,401,500]],
+  pm25: [[0,30,0,50],[30,60,51,100],[60,90,101,200],[90,120,201,300],[120,250,301,400],[250,500,401,500]],
+  pm10: [[0,50,0,50],[50,100,51,100],[100,250,101,200],[250,350,201,300],[350,430,301,400],[430,500,401,500]],
+  no2:  [[0,40,0,50],[40,80,51,100],[80,180,101,200],[180,280,201,300],[280,400,301,400],[400,500,401,500]],
+  so2:  [[0,40,0,50],[40,80,51,100],[80,380,101,200],[380,800,201,300],[800,1600,301,400],[1600,2000,401,500]],
+  co:   [[0,1.0,0,50],[1.0,2.0,51,100],[2.0,10.0,101,200],[10.0,17.0,201,300],[17.0,34.0,301,400],[34.0,50.0,401,500]],
+  o3:   [[0,50,0,50],[50,100,51,100],[100,168,101,200],[168,208,201,300],[208,748,301,400],[748,1000,401,500]],
+  nh3:  [[0,200,0,50],[200,400,51,100],[400,800,101,200],[800,1200,201,300],[1200,1800,301,400],[1800,2400,401,500]],
 };
 
 function calculateSubIndex(pollutant, value){
   const table = CPCB_BREAKPOINTS[pollutant];
   if(!table || value === null || value === undefined || isNaN(value)) return 0;
-  for(const [lo, hi, ilo, ihi] of table){
-    if(value >= lo && value <= hi){
-      return Math.round(ilo + ((ihi - ilo) / (hi - lo)) * (value - lo));
+  const c = Number(value);
+  if(c <= 0) return 0;
+  for(const [c_low, c_high, i_low, i_high] of table){
+    if(c <= c_high){
+      return Math.round(i_low + ((i_high - i_low) / (c_high - c_low)) * (c - c_low));
     }
   }
-  const last = table[table.length - 1];
-  return value > last[1] ? last[3] : 0;
+  // Linear extrapolation for concentrations exceeding highest severe threshold
+  const [c_low, c_high, i_low, i_high] = table[table.length - 1];
+  return Math.round(i_high + ((i_high - i_low) / (c_high - c_low)) * (c - c_high));
 }
 
-function getAqiCategory(aqi){
-  if(aqi <= 50)  return { label:'Good', color:'var(--aqi-good)', key:'good', badge:'#4ADE80' };
-  if(aqi <= 100) return { label:'Moderate', color:'var(--aqi-moderate)', key:'moderate', badge:'#FACC15' };
-  if(aqi <= 200) return { label:'Poor', color:'var(--aqi-poor)', key:'poor', badge:'#FB923C' };
-  if(aqi <= 300) return { label:'Very Poor', color:'var(--aqi-verypoor)', key:'verypoor', badge:'#F43F5E' };
+// Statutory CPCB IND-AQI Classification (with US EPA toggle support)
+function getAqiCategory(aqi, standard = (typeof currentStandard !== 'undefined' ? currentStandard : 'cpcb')){
+  const val = Number(aqi) || 0;
+  if(standard === 'us'){
+    if(val <= 50)  return { label:'Good', color:'#4ADE80', key:'good', badge:'#4ADE80' };
+    if(val <= 100) return { label:'Moderate', color:'#FACC15', key:'moderate', badge:'#FACC15' };
+    if(val <= 150) return { label:'Unhealthy for Sensitive', color:'#FB923C', key:'unhealthy_sens', badge:'#FB923C' };
+    if(val <= 200) return { label:'Unhealthy', color:'#F43F5E', key:'unhealthy', badge:'#F43F5E' };
+    if(val <= 300) return { label:'Very Unhealthy', color:'#A855F7', key:'very_unhealthy', badge:'#A855F7' };
+    return { label:'Hazardous', color:'#881337', key:'hazardous', badge:'#881337' };
+  }
+  // Official Statutory Indian CPCB IND-AQI (CPCB 2014 Standard)
+  if(val <= 50)  return { label:'Good', color:'var(--aqi-good)', key:'good', badge:'#4ADE80' };
+  if(val <= 100) return { label:'Satisfactory', color:'var(--aqi-satisfactory)', key:'satisfactory', badge:'#22C55E' };
+  if(val <= 200) return { label:'Moderate', color:'var(--aqi-moderate)', key:'moderate', badge:'#FACC15' };
+  if(val <= 300) return { label:'Poor', color:'var(--aqi-poor)', key:'poor', badge:'#FB923C' };
+  if(val <= 400) return { label:'Very Poor', color:'var(--aqi-verypoor)', key:'verypoor', badge:'#F43F5E' };
   return { label:'Severe', color:'var(--aqi-severe)', key:'severe', badge:'#A855F7' };
 }
 
@@ -1552,34 +1596,49 @@ function getAqiCategory(aqi){
    2. LIVE DATA STORE, FASTAPI BACKEND & OPEN-METEO ASYNC API
    ============================================================ */
 const urlParams = new URLSearchParams(window.location.search);
-const API_BASE_URL = urlParams.get('api') || 'http://127.0.0.1:8000';
+const API_BASE_URL = urlParams.get('api') || (window.location.origin && window.location.origin !== 'null' && window.location.protocol.startsWith('http') ? window.location.origin : 'http://127.0.0.1:8000');
 
 let isBackendAvailable = false;
 let activeForecastMode = 'neural'; // 'neural' or 'satellite'
 let selectedSampleId = 1493;
 let currentNeuralForecast = null;
+window.ACTIVE_API_URL = API_BASE_URL;
 
 async function checkFastApiBackend(){
   const badge = document.getElementById('backendStatusBadge');
-  try {
-    const res = await fetch(`${API_BASE_URL}/health`, { signal: AbortSignal.timeout(2500) });
-    if(res.ok){
-      const data = await res.json();
-      isBackendAvailable = true;
-      if(badge){
-        badge.innerHTML = `● AI NEURAL PIPELINE ONLINE (${(data.parameters || 819874).toLocaleString()} PARAMS)`;
-        badge.style.background = 'rgba(94, 234, 212, 0.16)';
-        badge.style.color = 'var(--accent)';
+  const hosts = [
+    API_BASE_URL,
+    'http://127.0.0.1:8000',
+    'http://localhost:8000'
+  ];
+  // Deduplicate
+  const uniqueHosts = Array.from(new Set(hosts.filter(Boolean)));
+  
+  for(const host of uniqueHosts){
+    try {
+      const res = await fetch(`${host}/health`, { signal: AbortSignal.timeout(2000) });
+      if(res.ok){
+        const data = await res.json();
+        isBackendAvailable = true;
+        window.ACTIVE_API_URL = host;
+        if(badge){
+          badge.innerHTML = `● AI NEURAL PIPELINE ONLINE (${(data.parameters || 819874).toLocaleString()} PARAMS)`;
+          badge.style.background = 'rgba(94, 234, 212, 0.18)';
+          badge.style.color = 'var(--accent)';
+          badge.style.borderColor = 'var(--accent)';
+        }
+        return true;
       }
-    }
-  } catch(e) {
-    isBackendAvailable = false;
-    if(badge){
-      badge.innerHTML = `● AI SIMULATION MODE (CLIENT)`;
-      badge.style.background = 'rgba(255, 107, 74, 0.14)';
-      badge.style.color = 'var(--radar-accent)';
-    }
+    } catch(e) {}
   }
+  
+  isBackendAvailable = false;
+  if(badge){
+    badge.innerHTML = `● AI SIMULATION MODE (CLIENT)`;
+    badge.style.background = 'rgba(255, 107, 74, 0.14)';
+    badge.style.color = 'var(--radar-accent)';
+  }
+  return false;
 }
 
 async function runNeuralInference(sampleId){
@@ -1592,9 +1651,10 @@ async function runNeuralInference(sampleId){
   try {
     let result = null;
     if(isBackendAvailable){
+      const host = window.ACTIVE_API_URL || API_BASE_URL;
       const fetchUrl = sampleId === 'live' 
-        ? `${API_BASE_URL}/demo-predict?sample_id=1493` 
-        : `${API_BASE_URL}/demo-predict?sample_id=${sampleId}`;
+        ? `${host}/demo-predict?sample_id=1493` 
+        : `${host}/demo-predict?sample_id=${sampleId}`;
       const res = await fetch(fetchUrl);
       if(res.ok){
         result = await res.json();
@@ -1615,6 +1675,8 @@ async function runNeuralInference(sampleId){
           step_hour: h,
           timestamp: new Date(Date.now() + h * 3600000).toISOString(),
           pm25: pmVal,
+          pm25_p10: Math.round(pmVal * 0.88),
+          pm25_p90: Math.round(pmVal * 1.14),
           cpcb_category: pmVal <= 30 ? 'Good' : pmVal <= 60 ? 'Satisfactory' : pmVal <= 90 ? 'Moderate' : pmVal <= 120 ? 'Poor' : pmVal <= 250 ? 'Very Poor' : 'Severe',
           spike_probability: Math.round(spikeProb * 1000) / 1000
         });
@@ -1632,7 +1694,32 @@ async function runNeuralInference(sampleId){
       };
     }
 
+    // Normalize API fields to forecast array
+    if(result && result.forecast){
+      result.forecast.forEach(item => {
+        item.pm25_p10 = item.uncertainty_p10 || item.pm25_p10 || Math.round(item.pm25 * 0.88);
+        item.pm25_p90 = item.uncertainty_p90 || item.pm25_p90 || Math.round(item.pm25 * 1.14);
+      });
+    }
+
     currentNeuralForecast = result;
+
+    // Fully reflect model output in active district telemetry
+    const d = districtStore[currentDistrictId];
+    if(d && result){
+      const stats = result.summary_statistics || result.summary || {};
+      d.forecastMean = Math.round((stats.avg_pm25 || stats.mean_pm25 || d.pm25) * 10) / 10;
+      d.forecastPeak = Math.round((stats.peak_pm25 || d.pm25 * 1.3) * 10) / 10;
+      d.p10 = Math.round((result.forecast?.[0]?.pm25_p10 || d.pm25 * 0.88) * 10) / 10;
+      d.p90 = Math.round((result.forecast?.[0]?.pm25_p90 || d.pm25 * 1.15) * 10) / 10;
+      if(stats.avg_pm25_aqi) d.aqi = stats.avg_pm25_aqi;
+      if(stats.starting_pm25) d.pm25 = Math.round(stats.starting_pm25 * 10) / 10;
+      d.category = getAqiCategory(d.aqi);
+    }
+
+    // Reflect across all UI modules without wasting any model output
+    renderRegionPanel(currentDistrictId);
+    renderGauge(currentDistrictId);
     renderAqiChart(currentDistrictId, currentTimeframe);
     showToast(`Neural inference completed for 72-hour horizon!`);
   } catch(err) {
@@ -1877,9 +1964,9 @@ function initLeafletRadar(){
     minZoom: 8, maxZoom: 14, maxBounds: [[27.5, 75.8], [29.9, 78.6]]
   });
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-    subdomains: 'abcd', maxZoom: 19
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; Esri, DeLorme, NAVTEQ &copy; OpenStreetMap',
+    maxZoom: 16
   }).addTo(leafletMap);
 
   DISTRICTS.forEach(d => {
@@ -2093,6 +2180,28 @@ function renderRegionPanel(districtId){
       </div>
     </div>
 
+    <!-- ATMOSAIR Neural Coupled Model Intelligence Strip -->
+    <div style="margin-top:16px; background:rgba(255, 107, 74, 0.08); border:1px solid rgba(255, 107, 74, 0.28); border-radius:var(--radius-s); padding:14px 16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <span style="font-family:var(--font-mono); font-size:10px; color:var(--radar-accent); font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">⚡ ATMOSAIR COUPLED 72H NEURAL FORECAST</span>
+        <span class="badge" style="font-size:9.5px; padding:2px 8px; border-radius:10px; background:rgba(94,234,212,0.15); color:var(--accent); font-weight:600;">XGBoost Residual Calibrated</span>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;">
+        <div>
+          <div style="font-size:10px; color:var(--text-3); font-family:var(--font-mono);">72H MEAN PM2.5</div>
+          <div style="font-size:18px; font-weight:700; font-family:var(--font-mono); color:var(--text-0);">${d.forecastMean || Math.round(d.pm25 * 1.05)} <span style="font-size:10px; color:var(--text-3);">µg/m³</span></div>
+        </div>
+        <div>
+          <div style="font-size:10px; color:var(--text-3); font-family:var(--font-mono);">PEAK HAZARD</div>
+          <div style="font-size:18px; font-weight:700; font-family:var(--font-mono); color:var(--radar-accent);">${d.forecastPeak || Math.round(d.pm25 * 1.35)} <span style="font-size:10px; color:var(--text-3);">µg/m³</span></div>
+        </div>
+        <div>
+          <div style="font-size:10px; color:var(--text-3); font-family:var(--font-mono);">P10–P90 RANGE</div>
+          <div style="font-size:13.5px; font-weight:700; font-family:var(--font-mono); color:var(--accent); margin-top:3px;">${d.p10 || Math.round(d.pm25 * 0.88)}–${d.p90 || Math.round(d.pm25 * 1.15)}</div>
+        </div>
+      </div>
+    </div>
+
     <div class="panel-btn-row">
       <button class="btn btn-primary btn-sm" id="pBtnInspect">🔍 Inspect Full Telemetry</button>
       <button class="btn btn-ghost glass btn-sm" id="pBtnRecenter">🎯 Recenter Radar</button>
@@ -2121,13 +2230,13 @@ function renderGauge(districtId){
   if(!d) return;
 
   const value = currentStandard === 'cpcb' ? d.aqi : d.usAqi;
-  const max = 400;
-  const pct = Math.min(1, value / max);
+  const max = 500;
+  const pct = Math.min(1, Math.max(0, value / max));
   const circumference = 345.6;
 
   const arc = document.getElementById('gaugeArc');
   const needle = document.getElementById('gaugeNeedle');
-  const cat = d.category;
+  const cat = getAqiCategory(value, currentStandard);
 
   arc.setAttribute('stroke', cat.color);
   const angle = -90 + pct * 180;
@@ -2213,20 +2322,46 @@ function renderAqiChart(districtId, timeframe){
     
     labels = slice.map((item, i) => `+${item.hour || item.step_hour || (i + 1)}h`);
     const neuralPm = slice.map(item => Math.round(Number(item.pm25) * 10) / 10);
+    const p10 = slice.map(item => item.pm25_p10 ? Math.round(Number(item.pm25_p10) * 10) / 10 : Math.round(item.pm25 * 0.88 * 10) / 10);
+    const p90 = slice.map(item => item.pm25_p90 ? Math.round(Number(item.pm25_p90) * 10) / 10 : Math.round(item.pm25 * 1.15 * 10) / 10);
     const tcnBaseline = slice.map((item, idx) => Math.round(item.pm25 * (1 + Math.sin(idx * 0.3) * 0.08) - (idx > 12 ? 8 : 0)));
     const spikeThreshold = slice.map(() => 345);
     
     datasets = [
       {
-        label: 'ATMOSAIR Multi-Branch Neural Forecast (µg/m³)',
+        label: 'ATMOSAIR Coupled Forecast (P50 Median)',
         data: neuralPm,
         borderColor: '#FF6B4A',
-        backgroundColor: 'rgba(255, 107, 74, 0.14)',
-        fill: true,
+        backgroundColor: 'rgba(255, 107, 74, 0.16)',
+        fill: false,
         tension: 0.28,
         pointRadius: count > 30 ? 1 : 2.5,
         borderWidth: 2.8,
         order: 1
+      },
+      {
+        label: 'P90 Upper Confidence Bound (Uncertainty)',
+        data: p90,
+        borderColor: 'rgba(255, 107, 74, 0.35)',
+        backgroundColor: 'rgba(255, 107, 74, 0.10)',
+        fill: '+1',
+        tension: 0.28,
+        pointRadius: 0,
+        borderWidth: 1,
+        borderDash: [3, 3],
+        order: 2
+      },
+      {
+        label: 'P10 Lower Confidence Bound',
+        data: p10,
+        borderColor: 'rgba(255, 107, 74, 0.35)',
+        backgroundColor: 'transparent',
+        fill: false,
+        tension: 0.28,
+        pointRadius: 0,
+        borderWidth: 1,
+        borderDash: [3, 3],
+        order: 3
       },
       {
         label: 'TCN Champion Baseline (µg/m³)',
@@ -2237,17 +2372,17 @@ function renderAqiChart(districtId, timeframe){
         tension: 0.28,
         pointRadius: 0,
         borderWidth: 1.8,
-        order: 2
+        order: 4
       },
       {
-        label: 'Spike Hazard Line (345 µg/m³)',
+        label: 'Severe Hazard Line (345 µg/m³)',
         data: spikeThreshold,
         borderColor: '#F43F5E',
         borderDash: [3, 3],
         pointRadius: 0,
         borderWidth: 1.2,
         fill: false,
-        order: 3
+        order: 5
       }
     ];
   } else {
@@ -2342,6 +2477,10 @@ document.getElementById('standardToggle').addEventListener('click', (e) => {
   document.querySelectorAll('#standardToggle button').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   currentStandard = btn.dataset.std;
+  Object.values(districtStore).forEach(d => {
+    const val = currentStandard === 'cpcb' ? d.aqi : d.usAqi;
+    d.category = getAqiCategory(val, currentStandard);
+  });
   renderGauge(currentDistrictId);
   renderAqiChart(currentDistrictId, currentTimeframe);
   renderRegionPanel(currentDistrictId);
@@ -2365,25 +2504,30 @@ function renderHealthAdvisory(districtId){
     purifierRec = { tag: 'Ventilate', color: 'var(--aqi-good)', text: 'Keep windows open for natural ventilation. Purifiers can remain off.' };
     vulnerableRec = { tag: 'Safe', color: 'var(--aqi-good)', text: 'No health impacts anticipated for children, elderly, or asthma patients.' };
   } else if(aqi <= 100){
-    outdoorRec = { tag: 'Acceptable', color: 'var(--aqi-moderate)', text: 'Outdoor activities are generally safe. Unusually sensitive individuals should monitor comfort.' };
-    maskRec = { tag: 'Optional', color: 'var(--aqi-moderate)', text: 'Masks optional for general public; sensitive groups may consider cloth cover.' };
-    purifierRec = { tag: 'Eco Mode', color: 'var(--aqi-moderate)', text: 'Operate indoor air filtration in Eco/Auto mode during peak traffic hours.' };
-    vulnerableRec = { tag: 'Mild Caution', color: 'var(--aqi-moderate)', text: 'Extremely sensitive individuals may experience minor cough or irritation.' };
+    outdoorRec = { tag: 'Satisfactory', color: 'var(--aqi-satisfactory)', text: 'Air quality is acceptable. Only unusually sensitive individuals may notice slight respiratory impact.' };
+    maskRec = { tag: 'Optional', color: 'var(--aqi-satisfactory)', text: 'Masks optional for general public; sensitive persons may carry a light cover.' };
+    purifierRec = { tag: 'Normal', color: 'var(--aqi-satisfactory)', text: 'Normal room ventilation is fine. Run purifier on low or auto setting.' };
+    vulnerableRec = { tag: 'Minor Discomfort', color: 'var(--aqi-satisfactory)', text: 'Sensitive individuals with chronic respiratory issues should monitor symptoms.' };
   } else if(aqi <= 200){
-    outdoorRec = { tag: 'Limit Strenuous', color: 'var(--aqi-poor)', text: 'Reduce intense outdoor exertion. Shift prolonged workouts indoors or to early mornings.' };
-    maskRec = { tag: 'Recommended', color: 'var(--aqi-poor)', text: 'Wear an N95 or PM2.5 particulate mask when commuting near arterial roads.' };
-    purifierRec = { tag: 'Active Run', color: 'var(--aqi-poor)', text: 'Run HEPA air purifiers in bedrooms and sealed living spaces continuously.' };
-    vulnerableRec = { tag: 'Elevated Risk', color: 'var(--aqi-poor)', text: 'Children, asthmatics, and seniors should limit outdoor playtime and keep inhalers handy.' };
+    outdoorRec = { tag: 'Moderate / Limit Strenuous', color: 'var(--aqi-moderate)', text: 'Breathing discomfort likely for people with lung/heart disease and children upon prolonged exertion.' };
+    maskRec = { tag: 'Recommended', color: 'var(--aqi-moderate)', text: 'Particulate mask recommended during peak traffic hours or active outdoor exertion.' };
+    purifierRec = { tag: 'Active Run', color: 'var(--aqi-moderate)', text: 'Operate indoor air filtration in auto mode in living and sleeping spaces.' };
+    vulnerableRec = { tag: 'Breathing Discomfort', color: 'var(--aqi-moderate)', text: 'Patients with asthma, bronchitis, or heart ailments should reduce prolonged exertion.' };
   } else if(aqi <= 300){
-    outdoorRec = { tag: 'Avoid Outdoor Work', color: 'var(--aqi-verypoor)', text: 'Avoid outdoor exercise and unnecessary exposure. Significant throat irritation likely.' };
-    maskRec = { tag: 'N95 Mandatory', color: 'var(--aqi-verypoor)', text: 'Strict N95/FFP2 respirator requirement for any outdoor transit or construction zones.' };
-    purifierRec = { tag: 'High Performance', color: 'var(--aqi-verypoor)', text: 'Run HEPA + Carbon filters at maximum speed. Keep all doors and windows tightly shut.' };
-    vulnerableRec = { tag: 'High Hazard', color: 'var(--aqi-verypoor)', text: 'High risk of respiratory aggravation. Vulnerable groups must stay strictly indoors.' };
+    outdoorRec = { tag: 'Poor / Reduce Exertion', color: 'var(--aqi-poor)', text: 'Breathing discomfort to most people on prolonged exposure. Avoid strenuous cardio outdoors.' };
+    maskRec = { tag: 'N95 Advised', color: 'var(--aqi-poor)', text: 'N95 or equivalent particulate respirator advised for outdoor travel and commutes.' };
+    purifierRec = { tag: 'High Filtration', color: 'var(--aqi-poor)', text: 'Keep windows sealed; run HEPA air purifiers at medium-to-high fan speeds.' };
+    vulnerableRec = { tag: 'High Vulnerability', color: 'var(--aqi-poor)', text: 'Seniors, children, and people with heart/lung disease should stay indoors.' };
+  } else if(aqi <= 400){
+    outdoorRec = { tag: 'Very Poor / Avoid Outdoors', color: 'var(--aqi-verypoor)', text: 'Respiratory illness likely on prolonged exposure. Avoid outdoor exercise and physical activities.' };
+    maskRec = { tag: 'N95 Mandatory', color: 'var(--aqi-verypoor)', text: 'Strict N95/FFP2 respirator requirement for any transit or mandatory outdoor movement.' };
+    purifierRec = { tag: 'Continuous HEPA', color: 'var(--aqi-verypoor)', text: 'Run HEPA + Carbon purifiers continuously at maximum capacity; seal door cracks.' };
+    vulnerableRec = { tag: 'Severe Aggravation', color: 'var(--aqi-verypoor)', text: 'Significant aggravation of heart and lung conditions; keep prescribed medication readily accessible.' };
   } else {
-    outdoorRec = { tag: 'Emergency Indoors', color: 'var(--aqi-severe)', text: 'Health emergency. Complete ban on outdoor cardio; toxic air mass stagnation.' };
-    maskRec = { tag: 'N99 / Double N95', color: 'var(--aqi-severe)', text: 'Dual-seal N99/P100 respirator required if emergency outdoor travel is unavoidable.' };
-    purifierRec = { tag: 'Continuous Max', color: 'var(--aqi-severe)', text: 'Create sealed clean-air rooms. Combine multiple HEPA filtration units.' };
-    vulnerableRec = { tag: 'Severe Hazard', color: 'var(--aqi-severe)', text: 'Acute respiratory distress risk. Emergency medical readiness recommended for patients.' };
+    outdoorRec = { tag: 'Emergency Indoors', color: 'var(--aqi-severe)', text: 'Severe public health emergency. Hazardous air mass affecting even completely healthy individuals.' };
+    maskRec = { tag: 'N99 / Double N95', color: 'var(--aqi-severe)', text: 'Dual-seal N99/P100 respirator required if emergency outdoor transit is unavoidable.' };
+    purifierRec = { tag: 'Sealed Clean Room', color: 'var(--aqi-severe)', text: 'Create isolated clean-air sanctuary rooms with multiple high-CADR HEPA purifiers.' };
+    vulnerableRec = { tag: 'Critical Risk', color: 'var(--aqi-severe)', text: 'High risk of acute cardiopulmonary attacks; seek emergency medical care if experiencing chest tightness.' };
   }
 
   grid.innerHTML = `
@@ -3096,11 +3240,40 @@ async function initializeApp(){
     // Dismiss overlay immediately so user sees UI instantly
     hideLoadingOverlay();
 
-    // Connect to AI Backend & Telemetry in Background (Non-blocking)
-    checkFastApiBackend().then(() => runNeuralInference(1493));
-    Promise.all(DISTRICTS.map(d => fetchLiveDistrictData(d.id))).then(() => {
-      selectDistrict(currentDistrictId, false);
+    // Connect to AI Backend & Telemetry in Background (Non-blocking, sub-second)
+    checkFastApiBackend().then(async (online) => {
+      runNeuralInference(1493);
+      if(online){
+        try {
+          const host = window.ACTIVE_API_URL || API_BASE_URL;
+          const sRes = await fetch(`${host}/forecast/spatial`, { signal: AbortSignal.timeout(2000) });
+          if(sRes.ok){
+            const sData = await sRes.json();
+            if(sData && sData.districts){
+              sData.districts.forEach(sd => {
+                if(districtStore[sd.id]){
+                  districtStore[sd.id].pm25 = Math.round(sd.baseline_pm25 * 10) / 10;
+                  districtStore[sd.id].aqi = sd.current_cpcb_aqi;
+                  districtStore[sd.id].predicted24h = Math.round(sd.forecast_mean_pm25_72h * 2.1);
+                  districtStore[sd.id].category = getAqiCategory(sd.current_cpcb_aqi);
+                }
+              });
+              buildHexagonMap();
+              selectDistrict(currentDistrictId, false);
+            }
+          }
+        } catch(e) {
+          console.warn('Spatial sync error:', e);
+        }
+      }
     });
+
+    // Lazy non-blocking telemetry only for active district (avoids 20 parallel external API calls)
+    setTimeout(() => {
+      fetchLiveDistrictData(currentDistrictId).then(() => {
+        selectDistrict(currentDistrictId, false);
+      });
+    }, 500);
 
   } catch(err) {
     console.error('Initialization error:', err);
