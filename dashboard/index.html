@@ -1682,14 +1682,12 @@ async function runNeuralInference(sampleId){
         });
       }
       result = {
-        model_name: 'CoupledMultiBranchForecastModel',
-        forecast_horizon_hours: 72,
         forecast: forecastArr,
-        summary: {
-          mean_pm25: Math.round(forecastArr.reduce((a,b)=>a+b.pm25,0)/72 * 10)/10,
-          peak_pm25: Math.max(...forecastArr.map(f=>f.pm25)),
-          peak_hour: forecastArr.findIndex(f=>f.pm25 === Math.max(...forecastArr.map(x=>x.pm25))) + 1,
-          spike_risk: forecastArr.some(f=>f.pm25>=345) ? 'HIGH' : 'LOW'
+        summary_statistics: {
+          avg_pm25: Math.round(baseVal),
+          avg_pm25_aqi: calculateSubIndex('pm25', baseVal),
+          peak_pm25: Math.max(...forecastArr.map(f => f.pm25)),
+          overall_category: getAqiCategory(calculateSubIndex('pm25', baseVal)).label
         }
       };
     }
@@ -1697,21 +1695,16 @@ async function runNeuralInference(sampleId){
     // Normalize API fields to forecast array
     if(result && result.forecast){
       result.forecast.forEach(item => {
-        item.pm25_p10 = item.uncertainty_p10 || item.pm25_p10 || Math.round(item.pm25 * 0.88);
-        item.pm25_p90 = item.uncertainty_p90 || item.pm25_p90 || Math.round(item.pm25 * 1.14);
+        if(!item.hour && item.step_hour) item.hour = item.step_hour;
       });
     }
 
     currentNeuralForecast = result;
-
-    // Fully reflect model output in active district telemetry
+    
+    // Reflect onto current district forecast store
     const d = districtStore[currentDistrictId];
-    if(d && result){
-      const stats = result.summary_statistics || result.summary || {};
-      d.forecastMean = Math.round((stats.avg_pm25 || stats.mean_pm25 || d.pm25) * 10) / 10;
-      d.forecastPeak = Math.round((stats.peak_pm25 || d.pm25 * 1.3) * 10) / 10;
-      d.p10 = Math.round((result.forecast?.[0]?.pm25_p10 || d.pm25 * 0.88) * 10) / 10;
-      d.p90 = Math.round((result.forecast?.[0]?.pm25_p90 || d.pm25 * 1.15) * 10) / 10;
+    if(d && result && result.summary_statistics){
+      const stats = result.summary_statistics;
       if(stats.avg_pm25_aqi) d.aqi = stats.avg_pm25_aqi;
       if(stats.starting_pm25) d.pm25 = Math.round(stats.starting_pm25 * 10) / 10;
       d.category = getAqiCategory(d.aqi);
@@ -2201,30 +2194,16 @@ function renderRegionPanel(districtId){
         </div>
       </div>
     </div>
-
     <div class="panel-btn-row">
       <button class="btn btn-primary btn-sm" id="pBtnInspect">🔍 Inspect Full Telemetry</button>
       <button class="btn btn-ghost glass btn-sm" id="pBtnRecenter">🎯 Recenter Radar</button>
-      <button class="btn btn-ghost glass btn-sm" id="pBtnShare">🔗 Copy Share Link</button>
     </div>
   `;
-
-  document.getElementById('pBtnInspect').addEventListener('click', () => openDistrictModal(d));
-  document.getElementById('pBtnRecenter').addEventListener('click', () => {
-    if(leafletMap) leafletMap.flyTo([d.lat, d.lon], 11, { duration: 1.2 });
-    positionSweep();
-  });
-  document.getElementById('pBtnShare').addEventListener('click', () => {
-    navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}#district=${d.id}`)
-      .then(() => showToast('Share link copied to clipboard!'));
-  });
 }
 
 /* ============================================================
-   8. GAUGE & CHART.JS AQI FORECAST ENGINE
+   7. AQI GAUGE & FORECAST CARDS
    ============================================================ */
-let aqiChartInstance = null;
-
 function renderGauge(districtId){
   const d = districtStore[districtId];
   if(!d) return;
@@ -2332,7 +2311,6 @@ function renderAqiChart(districtId, timeframe){
         label: 'ATMOSAIR Coupled Forecast (P50 Median)',
         data: neuralPm,
         borderColor: '#FF6B4A',
-        backgroundColor: 'rgba(255, 107, 74, 0.16)',
         fill: false,
         tension: 0.28,
         pointRadius: count > 30 ? 1 : 2.5,
@@ -2367,15 +2345,14 @@ function renderAqiChart(districtId, timeframe){
         label: 'TCN Champion Baseline (µg/m³)',
         data: tcnBaseline,
         borderColor: '#38BDF8',
-        borderDash: [5, 4],
-        fill: false,
+        backgroundColor: 'transparent',
         tension: 0.28,
         pointRadius: 0,
         borderWidth: 1.8,
         order: 4
       },
       {
-        label: 'Severe Hazard Line (345 µg/m³)',
+        label: 'Spike Hazard Line (345 µg/m³)',
         data: spikeThreshold,
         borderColor: '#F43F5E',
         borderDash: [3, 3],

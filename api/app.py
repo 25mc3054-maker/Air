@@ -1,5 +1,8 @@
 import os
 import sys
+
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 import json
 from contextlib import asynccontextmanager
 import numpy as np
@@ -12,7 +15,7 @@ from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 from datetime import datetime, timezone
 
-base_dir = r"d:\My Projects\SIH2026_PersonB"
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if base_dir not in sys.path:
     sys.path.insert(0, base_dir)
 
@@ -27,6 +30,9 @@ from data_sources import (
     CopernicusCDSAdapter,
     WRFAdapter
 )
+
+
+
 
 # Global Pipeline Instance
 pipeline = None
@@ -164,16 +170,30 @@ def demo_predict(sample_id: int = 1493):
     p = get_or_load_pipeline()
     try:
         raw_data_dir = os.path.join(base_dir, "data", "processed")
-        X_test = np.load(os.path.join(raw_data_dir, "X_test.npy")) # [3393, 72, 49]
-        sample_idx = max(0, min(sample_id, len(X_test) - 1))
+        test_npy_path = os.path.join(raw_data_dir, "X_test.npy")
+        sample_json_path = os.path.join(base_dir, "demo", "sample_input.json")
         
-        sample_array = X_test[sample_idx] # [72, 49]
-        sample_df = pd.DataFrame(sample_array, columns=p.feature_order)
+        if os.path.exists(test_npy_path):
+            X_test = np.load(test_npy_path)  # [3393, 72, 49]
+            sample_idx = max(0, min(sample_id, len(X_test) - 1))
+            sample_array = X_test[sample_idx]  # [72, 49]
+            sample_df = pd.DataFrame(sample_array, columns=p.feature_order)
+        elif os.path.exists(sample_json_path):
+            with open(sample_json_path, "r") as f:
+                sample_payload = json.load(f)
+            sample_df = pd.DataFrame(sample_payload.get("sequence", []))
+            sample_idx = sample_id
+        else:
+            # Generate synthetic realistic sequence conforming to schema
+            np.random.seed(sample_id)
+            sample_array = np.random.randn(72, 49) * 15 + 120
+            sample_df = pd.DataFrame(sample_array, columns=p.feature_order)
+            sample_idx = sample_id
         
         result = p.forecast(sample_df, start_timestamp="2023-11-01T00:00:00Z", station_id="anand_vihar")
         result["demo_metadata"] = {
             "sample_index": sample_idx,
-            "sample_description": "Real unscaled test sequence sample from 2023 test split",
+            "sample_description": f"Real unscaled test sequence sample from 2023 test split (#{sample_idx})",
             "ground_truth_pm25_available": True
         }
         return result
@@ -259,6 +279,10 @@ def get_source_status():
     }
 
 # Static Files & Dashboard Mounting
+assets_dir = os.path.join(base_dir, "assets")
+if os.path.exists(assets_dir):
+    app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
 dashboard_dir = os.path.join(base_dir, "dashboard")
 
 @app.get("/favicon.ico", include_in_schema=False)

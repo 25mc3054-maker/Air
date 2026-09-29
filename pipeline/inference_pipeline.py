@@ -1,5 +1,8 @@
 import os
 import sys
+
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 import json
 import joblib
 import numpy as np
@@ -8,7 +11,7 @@ import torch
 from datetime import datetime, timezone, timedelta
 from typing import Dict, Any, List, Optional, Tuple
 
-base_dir = r"d:\My Projects\SIH2026_PersonB"
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if base_dir not in sys.path:
     sys.path.insert(0, base_dir)
 

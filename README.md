@@ -84,3 +84,48 @@ Open your browser to:
 * [Validation & Benchmark Report](VALIDATION_REPORT.md)
 * [Production Deployment](DEPLOYMENT.md)
 * [Security Policy](SECURITY.md)
+
+---
+
+## 7. Repository Structure
+
+```
+SIH2026_PersonB/
+├── api/                         # FastAPI Production Server
+│   └── app.py
+├── configs/                     # Feature Groups & Training Configurations
+│   ├── feature_groups.json
+│   └── training_config.json
+├── dashboard/                   # Interactive ATMOSAIR Demo Web Frontend
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
+├── data/                        # Processed Data Arrays & Scaled Data
+├── demo/                        # Sample Input Data
+│   └── sample_input.json
+├── docs/                        # Project Documentation & Reports
+│   ├── FINAL_PROJECT_REPORT.md
+│   ├── PRESENTATION_CONTENT.md
+│   ├── ARCHITECTURE_DIAGRAM.md
+│   └── FINAL_HANDOFF_CHECKLIST.md
+├── models/                      # PyTorch Architectures & Checkpoints
+│   ├── checkpoints/
+│   │   └── proposed_best.pt     # Verified Best Model Weights (Epoch 1)
+│   ├── scalers/                 # Preprocessing Scalers (Train-only)
+│   └── proposed_model.py
+├── pipeline/                    # Production Inference Pipeline
+│   └── inference_pipeline.py
+├── results/                     # Evaluation Outputs, Metrics & Plots
+│   ├── plots/                   # 31 Generated Evaluation Visualizations
+│   └── proposed_final_evaluation.json
+├── tests/                       # Test Suites
+│   ├── test_proposed_training_integrity.py
+│   ├── test_final_evaluation.py
+│   └── test_production_pipeline.py
+└── README.md
+```
+
+---
+
+## 8. Reproducibility Guarantee
+All training, validation, and evaluation pipelines enforce random seed **`42`** (`torch.manual_seed(42)`, `np.random.seed(42)`). Preprocessing scalers are strictly fitted on training data to ensure zero data leakage.

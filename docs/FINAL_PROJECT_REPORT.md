@@ -1,5 +1,5 @@
-# SIH 2026 — FINAL PROJECT REPORT
-> **Project:** Deep Learning Air Quality Forecasting (72-Hour PM2.5 Trajectory Prediction)  
+# ATMOSAIR — FINAL PROJECT REPORT
+> **Project:** ATMOSAIR Deep Learning Air Quality Forecasting (72-Hour PM2.5 Trajectory Prediction)  
 > **Model Architecture:** Coupled Multi-Branch Forecast Model (`CoupledMultiBranchForecastModel`)  
 > **Parameter Budget:** 819,874 Parameters  
 > **Evaluated Test Set:** Untouched 2023 Test Set (3,393 sequences, 244,296 timesteps)  
@@ -7,7 +7,7 @@
 ---
 
 ## 1. Abstract
-Long-horizon air quality forecasting plays a vital role in public health advisories, urban environmental management, and emergency pollution mitigation. This project presents a **72-Hour Multi-Step Direct PM2.5 Air Quality Forecasting System** developed for the Smart India Hackathon (SIH) 2026. The proposed **Coupled Multi-Branch Neural Network** ingests 72 historical hours of 49 multi-modal environmental variables across 4 domain-specific causal convolutional streams, fused via a Gated Linear Unit (GLU) and refined by 4-Head Causal Self-Attention. Evaluated on an untouched test set of 3,393 sequences (244,296 hourly predictions), the proposed model achieved an **MAE of 56.66 µg/m³**, **RMSE of 82.56 µg/m³**, **$R^2$ of 0.3564**, and **WMAPE of 41.11%**, establishing a new project leaderboard record and significantly outperforming the TCN champion baseline ($p < 0.001$).
+Long-horizon air quality forecasting plays a vital role in public health advisories, urban environmental management, and emergency pollution mitigation. This project presents **ATMOSAIR: A 72-Hour Multi-Step Direct PM2.5 Air Quality Forecasting System** developed for the Smart India Hackathon (SIH) 2026. The proposed **Coupled Multi-Branch Neural Network** ingests 72 historical hours of 49 multi-modal environmental variables across 4 domain-specific causal convolutional streams, fused via a Gated Linear Unit (GLU) and refined by 4-Head Causal Self-Attention. Evaluated on an untouched test set of 3,393 sequences (244,296 hourly predictions), the proposed model achieved an **MAE of 56.66 µg/m³**, **RMSE of 82.56 µg/m³**, **$R^2$ of 0.3564**, and **WMAPE of 41.11%**, establishing a new project leaderboard record and significantly outperforming the TCN champion baseline ($p < 0.001$).
 
 ---
 

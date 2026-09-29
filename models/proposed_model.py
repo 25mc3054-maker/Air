@@ -70,7 +70,7 @@ class CausalMultiHeadAttention(nn.Module):
 
 class CoupledMultiBranchForecastModel(nn.Module):
     """
-    Proposed Architecture for SIH2026 Person B Air Quality Forecasting.
+    ATMOSAIR Architecture for Air Quality Forecasting.
     
     Multi-Branch Domain Encoding -> Cross-Feature Gated Fusion -> Causal Attention -> Dual Forecast/Spike Heads
     Input:  [B, 72, 49]

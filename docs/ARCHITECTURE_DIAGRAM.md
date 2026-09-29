@@ -1,4 +1,4 @@
-# SIH 2026 — NEURAL ARCHITECTURE SPECIFICATION & DIAGRAM
+# ATMOSAIR — NEURAL ARCHITECTURE SPECIFICATION & DIAGRAM
 
 > **Model Class:** `CoupledMultiBranchForecastModel`  
 > **Total Parameters:** `819,874` parameters (100% trainable)  
