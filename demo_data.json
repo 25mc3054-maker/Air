@@ -1,0 +1,3687 @@
+{
+  "1493": {
+    "summary_statistics": {
+      "avg_pm25": 99.42,
+      "overall_category": "Moderate",
+      "overall_category_color": "#FF9933",
+      "peak_pm25": 183.72,
+      "peak_hour": 72,
+      "peak_timestamp": "Hour +72",
+      "avg_spike_probability": 0.003
+    },
+    "forecast": [
+      {
+        "hour": 1,
+        "timestamp": "+1h",
+        "pm25": 124.42,
+        "actual_pm25": 143.25,
+        "tcn_pm25": 121.5,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 2,
+        "timestamp": "+2h",
+        "pm25": 111.4,
+        "actual_pm25": 119.25,
+        "tcn_pm25": 110.67,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 3,
+        "timestamp": "+3h",
+        "pm25": 103.32,
+        "actual_pm25": 66.0,
+        "tcn_pm25": 100.97,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 4,
+        "timestamp": "+4h",
+        "pm25": 98.7,
+        "actual_pm25": 77.5,
+        "tcn_pm25": 92.71,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 5,
+        "timestamp": "+5h",
+        "pm25": 88.84,
+        "actual_pm25": 84.75,
+        "tcn_pm25": 79.11,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 6,
+        "timestamp": "+6h",
+        "pm25": 65.35,
+        "actual_pm25": 97.25,
+        "tcn_pm25": 75.49,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 7,
+        "timestamp": "+7h",
+        "pm25": 56.9,
+        "actual_pm25": 128.0,
+        "tcn_pm25": 66.22,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 8,
+        "timestamp": "+8h",
+        "pm25": 53.05,
+        "actual_pm25": 101.25,
+        "tcn_pm25": 63.22,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 9,
+        "timestamp": "+9h",
+        "pm25": 50.77,
+        "actual_pm25": 95.0,
+        "tcn_pm25": 52.8,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 10,
+        "timestamp": "+10h",
+        "pm25": 44.88,
+        "actual_pm25": 69.0,
+        "tcn_pm25": 48.05,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 11,
+        "timestamp": "+11h",
+        "pm25": 45.69,
+        "actual_pm25": 59.25,
+        "tcn_pm25": 49.59,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 12,
+        "timestamp": "+12h",
+        "pm25": 52.7,
+        "actual_pm25": 79.5,
+        "tcn_pm25": 60.16,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 13,
+        "timestamp": "+13h",
+        "pm25": 61.5,
+        "actual_pm25": 91.0,
+        "tcn_pm25": 69.29,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 14,
+        "timestamp": "+14h",
+        "pm25": 76.15,
+        "actual_pm25": 96.5,
+        "tcn_pm25": 86.49,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 15,
+        "timestamp": "+15h",
+        "pm25": 83.77,
+        "actual_pm25": 136.75,
+        "tcn_pm25": 94.24,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 16,
+        "timestamp": "+16h",
+        "pm25": 83.08,
+        "actual_pm25": 155.25,
+        "tcn_pm25": 98.02,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 17,
+        "timestamp": "+17h",
+        "pm25": 90.56,
+        "actual_pm25": 167.75,
+        "tcn_pm25": 100.14,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 18,
+        "timestamp": "+18h",
+        "pm25": 88.88,
+        "actual_pm25": 201.25,
+        "tcn_pm25": 99.97,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 19,
+        "timestamp": "+19h",
+        "pm25": 94.25,
+        "actual_pm25": 228.75,
+        "tcn_pm25": 96.39,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 20,
+        "timestamp": "+20h",
+        "pm25": 102.57,
+        "actual_pm25": 241.0,
+        "tcn_pm25": 91.81,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 21,
+        "timestamp": "+21h",
+        "pm25": 111.95,
+        "actual_pm25": 219.5,
+        "tcn_pm25": 96.2,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 22,
+        "timestamp": "+22h",
+        "pm25": 112.31,
+        "actual_pm25": 239.5,
+        "tcn_pm25": 106.96,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 23,
+        "timestamp": "+23h",
+        "pm25": 125.38,
+        "actual_pm25": 324.75,
+        "tcn_pm25": 111.77,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 24,
+        "timestamp": "+24h",
+        "pm25": 131.55,
+        "actual_pm25": 195.5,
+        "tcn_pm25": 111.99,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 25,
+        "timestamp": "+25h",
+        "pm25": 133.89,
+        "actual_pm25": 88.25,
+        "tcn_pm25": 118.42,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 26,
+        "timestamp": "+26h",
+        "pm25": 136.64,
+        "actual_pm25": 29.75,
+        "tcn_pm25": 115.23,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 27,
+        "timestamp": "+27h",
+        "pm25": 132.12,
+        "actual_pm25": 30.25,
+        "tcn_pm25": 108.21,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 28,
+        "timestamp": "+28h",
+        "pm25": 119.22,
+        "actual_pm25": 45.75,
+        "tcn_pm25": 96.14,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 29,
+        "timestamp": "+29h",
+        "pm25": 97.97,
+        "actual_pm25": 36.25,
+        "tcn_pm25": 84.87,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 30,
+        "timestamp": "+30h",
+        "pm25": 82.29,
+        "actual_pm25": 62.5,
+        "tcn_pm25": 71.4,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 31,
+        "timestamp": "+31h",
+        "pm25": 67.76,
+        "actual_pm25": 63.0,
+        "tcn_pm25": 67.23,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 32,
+        "timestamp": "+32h",
+        "pm25": 62.17,
+        "actual_pm25": 78.0,
+        "tcn_pm25": 67.34,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 33,
+        "timestamp": "+33h",
+        "pm25": 52.28,
+        "actual_pm25": 48.0,
+        "tcn_pm25": 64.22,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 34,
+        "timestamp": "+34h",
+        "pm25": 49.07,
+        "actual_pm25": 34.0,
+        "tcn_pm25": 60.33,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 35,
+        "timestamp": "+35h",
+        "pm25": 54.68,
+        "actual_pm25": 33.0,
+        "tcn_pm25": 57.55,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 36,
+        "timestamp": "+36h",
+        "pm25": 63.99,
+        "actual_pm25": 27.5,
+        "tcn_pm25": 62.15,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 37,
+        "timestamp": "+37h",
+        "pm25": 79.99,
+        "actual_pm25": 20.0,
+        "tcn_pm25": 71.48,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 38,
+        "timestamp": "+38h",
+        "pm25": 87.97,
+        "actual_pm25": 14.0,
+        "tcn_pm25": 87.76,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 39,
+        "timestamp": "+39h",
+        "pm25": 100.01,
+        "actual_pm25": 14.0,
+        "tcn_pm25": 97.96,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 40,
+        "timestamp": "+40h",
+        "pm25": 99.95,
+        "actual_pm25": 31.0,
+        "tcn_pm25": 104.25,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 41,
+        "timestamp": "+41h",
+        "pm25": 112.51,
+        "actual_pm25": 31.0,
+        "tcn_pm25": 116.89,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 42,
+        "timestamp": "+42h",
+        "pm25": 114.74,
+        "actual_pm25": 53.0,
+        "tcn_pm25": 107.05,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 43,
+        "timestamp": "+43h",
+        "pm25": 110.81,
+        "actual_pm25": 50.5,
+        "tcn_pm25": 100.39,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 44,
+        "timestamp": "+44h",
+        "pm25": 124.28,
+        "actual_pm25": 41.5,
+        "tcn_pm25": 97.01,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 45,
+        "timestamp": "+45h",
+        "pm25": 127.09,
+        "actual_pm25": 37.0,
+        "tcn_pm25": 107.83,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 46,
+        "timestamp": "+46h",
+        "pm25": 141.0,
+        "actual_pm25": 43.5,
+        "tcn_pm25": 111.9,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 47,
+        "timestamp": "+47h",
+        "pm25": 134.35,
+        "actual_pm25": 79.5,
+        "tcn_pm25": 112.95,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 48,
+        "timestamp": "+48h",
+        "pm25": 137.53,
+        "actual_pm25": 129.75,
+        "tcn_pm25": 111.39,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 49,
+        "timestamp": "+49h",
+        "pm25": 118.31,
+        "actual_pm25": 122.75,
+        "tcn_pm25": 105.52,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 50,
+        "timestamp": "+50h",
+        "pm25": 108.4,
+        "actual_pm25": 92.5,
+        "tcn_pm25": 97.68,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 51,
+        "timestamp": "+51h",
+        "pm25": 97.61,
+        "actual_pm25": 86.5,
+        "tcn_pm25": 94.46,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 52,
+        "timestamp": "+52h",
+        "pm25": 99.33,
+        "actual_pm25": 84.0,
+        "tcn_pm25": 83.27,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 53,
+        "timestamp": "+53h",
+        "pm25": 88.08,
+        "actual_pm25": 62.0,
+        "tcn_pm25": 72.34,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 54,
+        "timestamp": "+54h",
+        "pm25": 79.03,
+        "actual_pm25": 56.5,
+        "tcn_pm25": 63.28,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 55,
+        "timestamp": "+55h",
+        "pm25": 68.12,
+        "actual_pm25": 47.75,
+        "tcn_pm25": 60.29,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 56,
+        "timestamp": "+56h",
+        "pm25": 61.16,
+        "actual_pm25": 47.33,
+        "tcn_pm25": 54.94,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 57,
+        "timestamp": "+57h",
+        "pm25": 56.25,
+        "actual_pm25": 56.5,
+        "tcn_pm25": 47.49,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 58,
+        "timestamp": "+58h",
+        "pm25": 50.58,
+        "actual_pm25": 64.75,
+        "tcn_pm25": 40.94,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 59,
+        "timestamp": "+59h",
+        "pm25": 60.39,
+        "actual_pm25": 66.33,
+        "tcn_pm25": 47.12,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 60,
+        "timestamp": "+60h",
+        "pm25": 69.26,
+        "actual_pm25": 61.75,
+        "tcn_pm25": 56.34,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 61,
+        "timestamp": "+61h",
+        "pm25": 88.04,
+        "actual_pm25": 54.0,
+        "tcn_pm25": 65.76,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 62,
+        "timestamp": "+62h",
+        "pm25": 98.43,
+        "actual_pm25": 68.0,
+        "tcn_pm25": 81.04,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 63,
+        "timestamp": "+63h",
+        "pm25": 111.46,
+        "actual_pm25": 98.25,
+        "tcn_pm25": 98.4,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 64,
+        "timestamp": "+64h",
+        "pm25": 117.17,
+        "actual_pm25": 117.75,
+        "tcn_pm25": 109.43,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 65,
+        "timestamp": "+65h",
+        "pm25": 132.83,
+        "actual_pm25": 117.5,
+        "tcn_pm25": 131.92,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 66,
+        "timestamp": "+66h",
+        "pm25": 136.44,
+        "actual_pm25": 112.25,
+        "tcn_pm25": 132.69,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 67,
+        "timestamp": "+67h",
+        "pm25": 150.57,
+        "actual_pm25": 112.5,
+        "tcn_pm25": 132.82,
+        "spike_probability": 0.007
+      },
+      {
+        "hour": 68,
+        "timestamp": "+68h",
+        "pm25": 170.61,
+        "actual_pm25": 104.25,
+        "tcn_pm25": 137.49,
+        "spike_probability": 0.013
+      },
+      {
+        "hour": 69,
+        "timestamp": "+69h",
+        "pm25": 180.46,
+        "actual_pm25": 135.25,
+        "tcn_pm25": 145.46,
+        "spike_probability": 0.018
+      },
+      {
+        "hour": 70,
+        "timestamp": "+70h",
+        "pm25": 177.04,
+        "actual_pm25": 128.25,
+        "tcn_pm25": 150.44,
+        "spike_probability": 0.016
+      },
+      {
+        "hour": 71,
+        "timestamp": "+71h",
+        "pm25": 174.58,
+        "actual_pm25": 117.25,
+        "tcn_pm25": 161.23,
+        "spike_probability": 0.015
+      },
+      {
+        "hour": 72,
+        "timestamp": "+72h",
+        "pm25": 183.72,
+        "actual_pm25": 88.25,
+        "tcn_pm25": 161.51,
+        "spike_probability": 0.02
+      }
+    ],
+    "actual": [
+      143.25,
+      119.25,
+      66.0,
+      77.5,
+      84.75,
+      97.25,
+      128.0,
+      101.25,
+      95.0,
+      69.0,
+      59.25,
+      79.5,
+      91.0,
+      96.5,
+      136.75,
+      155.25,
+      167.75,
+      201.25,
+      228.75,
+      241.0,
+      219.5,
+      239.5,
+      324.75,
+      195.5,
+      88.25,
+      29.75,
+      30.25,
+      45.75,
+      36.25,
+      62.5,
+      63.0,
+      78.0,
+      48.0,
+      34.0,
+      33.0,
+      27.5,
+      20.0,
+      14.0,
+      14.0,
+      31.0,
+      31.0,
+      53.0,
+      50.5,
+      41.5,
+      37.0,
+      43.5,
+      79.5,
+      129.75,
+      122.75,
+      92.5,
+      86.5,
+      84.0,
+      62.0,
+      56.5,
+      47.75,
+      47.33,
+      56.5,
+      64.75,
+      66.33,
+      61.75,
+      54.0,
+      68.0,
+      98.25,
+      117.75,
+      117.5,
+      112.25,
+      112.5,
+      104.25,
+      135.25,
+      128.25,
+      117.25,
+      88.25
+    ],
+    "tcn": [
+      121.5,
+      110.67,
+      100.97,
+      92.71,
+      79.11,
+      75.49,
+      66.22,
+      63.22,
+      52.8,
+      48.05,
+      49.59,
+      60.16,
+      69.29,
+      86.49,
+      94.24,
+      98.02,
+      100.14,
+      99.97,
+      96.39,
+      91.81,
+      96.2,
+      106.96,
+      111.77,
+      111.99,
+      118.42,
+      115.23,
+      108.21,
+      96.14,
+      84.87,
+      71.4,
+      67.23,
+      67.34,
+      64.22,
+      60.33,
+      57.55,
+      62.15,
+      71.48,
+      87.76,
+      97.96,
+      104.25,
+      116.89,
+      107.05,
+      100.39,
+      97.01,
+      107.83,
+      111.9,
+      112.95,
+      111.39,
+      105.52,
+      97.68,
+      94.46,
+      83.27,
+      72.34,
+      63.28,
+      60.29,
+      54.94,
+      47.49,
+      40.94,
+      47.12,
+      56.34,
+      65.76,
+      81.04,
+      98.4,
+      109.43,
+      131.92,
+      132.69,
+      132.82,
+      137.49,
+      145.46,
+      150.44,
+      161.23,
+      161.51
+    ]
+  },
+  "2708": {
+    "summary_statistics": {
+      "avg_pm25": 51.28,
+      "overall_category": "Satisfactory",
+      "overall_category_color": "#FFDE33",
+      "peak_pm25": 71.64,
+      "peak_hour": 49,
+      "peak_timestamp": "Hour +49",
+      "avg_spike_probability": 0.0
+    },
+    "forecast": [
+      {
+        "hour": 1,
+        "timestamp": "+1h",
+        "pm25": 43.15,
+        "actual_pm25": 44.0,
+        "tcn_pm25": 64.53,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 2,
+        "timestamp": "+2h",
+        "pm25": 36.12,
+        "actual_pm25": 31.5,
+        "tcn_pm25": 50.14,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 3,
+        "timestamp": "+3h",
+        "pm25": 31.17,
+        "actual_pm25": 30.0,
+        "tcn_pm25": 45.95,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 4,
+        "timestamp": "+4h",
+        "pm25": 33.7,
+        "actual_pm25": 27.75,
+        "tcn_pm25": 42.65,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 5,
+        "timestamp": "+5h",
+        "pm25": 34.14,
+        "actual_pm25": 21.0,
+        "tcn_pm25": 44.69,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 6,
+        "timestamp": "+6h",
+        "pm25": 34.43,
+        "actual_pm25": 22.5,
+        "tcn_pm25": 45.31,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 7,
+        "timestamp": "+7h",
+        "pm25": 33.24,
+        "actual_pm25": 33.5,
+        "tcn_pm25": 46.01,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 8,
+        "timestamp": "+8h",
+        "pm25": 36.52,
+        "actual_pm25": 52.25,
+        "tcn_pm25": 46.9,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 9,
+        "timestamp": "+9h",
+        "pm25": 38.17,
+        "actual_pm25": 47.0,
+        "tcn_pm25": 43.68,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 10,
+        "timestamp": "+10h",
+        "pm25": 40.31,
+        "actual_pm25": 39.25,
+        "tcn_pm25": 42.17,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 11,
+        "timestamp": "+11h",
+        "pm25": 39.94,
+        "actual_pm25": 39.25,
+        "tcn_pm25": 41.47,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 12,
+        "timestamp": "+12h",
+        "pm25": 41.18,
+        "actual_pm25": 28.0,
+        "tcn_pm25": 41.14,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 13,
+        "timestamp": "+13h",
+        "pm25": 42.89,
+        "actual_pm25": 53.0,
+        "tcn_pm25": 50.48,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 14,
+        "timestamp": "+14h",
+        "pm25": 45.72,
+        "actual_pm25": 54.25,
+        "tcn_pm25": 49.07,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 15,
+        "timestamp": "+15h",
+        "pm25": 46.93,
+        "actual_pm25": 63.25,
+        "tcn_pm25": 53.19,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 16,
+        "timestamp": "+16h",
+        "pm25": 50.32,
+        "actual_pm25": 76.5,
+        "tcn_pm25": 59.97,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 17,
+        "timestamp": "+17h",
+        "pm25": 50.65,
+        "actual_pm25": 65.25,
+        "tcn_pm25": 64.61,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 18,
+        "timestamp": "+18h",
+        "pm25": 51.39,
+        "actual_pm25": 53.25,
+        "tcn_pm25": 61.66,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 19,
+        "timestamp": "+19h",
+        "pm25": 51.76,
+        "actual_pm25": 45.25,
+        "tcn_pm25": 59.4,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 20,
+        "timestamp": "+20h",
+        "pm25": 52.95,
+        "actual_pm25": 23.0,
+        "tcn_pm25": 60.14,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 21,
+        "timestamp": "+21h",
+        "pm25": 52.79,
+        "actual_pm25": 9.5,
+        "tcn_pm25": 62.55,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 22,
+        "timestamp": "+22h",
+        "pm25": 54.05,
+        "actual_pm25": 16.25,
+        "tcn_pm25": 59.47,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 23,
+        "timestamp": "+23h",
+        "pm25": 54.03,
+        "actual_pm25": 25.25,
+        "tcn_pm25": 60.51,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 24,
+        "timestamp": "+24h",
+        "pm25": 54.41,
+        "actual_pm25": 34.0,
+        "tcn_pm25": 60.7,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 25,
+        "timestamp": "+25h",
+        "pm25": 54.58,
+        "actual_pm25": 41.75,
+        "tcn_pm25": 60.59,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 26,
+        "timestamp": "+26h",
+        "pm25": 57.46,
+        "actual_pm25": 43.5,
+        "tcn_pm25": 57.52,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 27,
+        "timestamp": "+27h",
+        "pm25": 61.81,
+        "actual_pm25": 33.0,
+        "tcn_pm25": 54.18,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 28,
+        "timestamp": "+28h",
+        "pm25": 57.13,
+        "actual_pm25": 32.5,
+        "tcn_pm25": 51.74,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 29,
+        "timestamp": "+29h",
+        "pm25": 52.46,
+        "actual_pm25": 32.75,
+        "tcn_pm25": 52.91,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 30,
+        "timestamp": "+30h",
+        "pm25": 56.45,
+        "actual_pm25": 38.0,
+        "tcn_pm25": 53.43,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 31,
+        "timestamp": "+31h",
+        "pm25": 58.48,
+        "actual_pm25": 57.25,
+        "tcn_pm25": 55.65,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 32,
+        "timestamp": "+32h",
+        "pm25": 57.6,
+        "actual_pm25": 76.75,
+        "tcn_pm25": 58.26,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 33,
+        "timestamp": "+33h",
+        "pm25": 54.56,
+        "actual_pm25": 77.75,
+        "tcn_pm25": 63.36,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 34,
+        "timestamp": "+34h",
+        "pm25": 52.58,
+        "actual_pm25": 78.75,
+        "tcn_pm25": 66.32,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 35,
+        "timestamp": "+35h",
+        "pm25": 45.65,
+        "actual_pm25": 85.75,
+        "tcn_pm25": 64.38,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 36,
+        "timestamp": "+36h",
+        "pm25": 46.15,
+        "actual_pm25": 72.5,
+        "tcn_pm25": 59.59,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 37,
+        "timestamp": "+37h",
+        "pm25": 49.49,
+        "actual_pm25": 90.0,
+        "tcn_pm25": 57.48,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 38,
+        "timestamp": "+38h",
+        "pm25": 50.38,
+        "actual_pm25": 67.25,
+        "tcn_pm25": 59.81,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 39,
+        "timestamp": "+39h",
+        "pm25": 49.29,
+        "actual_pm25": 65.25,
+        "tcn_pm25": 60.2,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 40,
+        "timestamp": "+40h",
+        "pm25": 51.95,
+        "actual_pm25": 49.75,
+        "tcn_pm25": 60.13,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 41,
+        "timestamp": "+41h",
+        "pm25": 51.3,
+        "actual_pm25": 55.25,
+        "tcn_pm25": 57.85,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 42,
+        "timestamp": "+42h",
+        "pm25": 54.06,
+        "actual_pm25": 55.0,
+        "tcn_pm25": 57.39,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 43,
+        "timestamp": "+43h",
+        "pm25": 52.53,
+        "actual_pm25": 45.75,
+        "tcn_pm25": 55.13,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 44,
+        "timestamp": "+44h",
+        "pm25": 53.97,
+        "actual_pm25": 22.75,
+        "tcn_pm25": 50.81,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 45,
+        "timestamp": "+45h",
+        "pm25": 53.46,
+        "actual_pm25": 15.0,
+        "tcn_pm25": 49.43,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 46,
+        "timestamp": "+46h",
+        "pm25": 57.22,
+        "actual_pm25": 32.75,
+        "tcn_pm25": 47.72,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 47,
+        "timestamp": "+47h",
+        "pm25": 60.3,
+        "actual_pm25": 44.25,
+        "tcn_pm25": 55.02,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 48,
+        "timestamp": "+48h",
+        "pm25": 70.2,
+        "actual_pm25": 61.0,
+        "tcn_pm25": 64.07,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 49,
+        "timestamp": "+49h",
+        "pm25": 71.64,
+        "actual_pm25": 76.5,
+        "tcn_pm25": 59.78,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 50,
+        "timestamp": "+50h",
+        "pm25": 68.19,
+        "actual_pm25": 64.0,
+        "tcn_pm25": 55.2,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 51,
+        "timestamp": "+51h",
+        "pm25": 70.11,
+        "actual_pm25": 70.0,
+        "tcn_pm25": 55.6,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 52,
+        "timestamp": "+52h",
+        "pm25": 65.38,
+        "actual_pm25": 50.5,
+        "tcn_pm25": 52.54,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 53,
+        "timestamp": "+53h",
+        "pm25": 64.09,
+        "actual_pm25": 52.0,
+        "tcn_pm25": 50.25,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 54,
+        "timestamp": "+54h",
+        "pm25": 66.41,
+        "actual_pm25": 71.75,
+        "tcn_pm25": 51.83,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 55,
+        "timestamp": "+55h",
+        "pm25": 64.29,
+        "actual_pm25": 68.75,
+        "tcn_pm25": 48.36,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 56,
+        "timestamp": "+56h",
+        "pm25": 57.94,
+        "actual_pm25": 55.75,
+        "tcn_pm25": 51.95,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 57,
+        "timestamp": "+57h",
+        "pm25": 54.63,
+        "actual_pm25": 86.0,
+        "tcn_pm25": 44.06,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 58,
+        "timestamp": "+58h",
+        "pm25": 53.52,
+        "actual_pm25": 76.0,
+        "tcn_pm25": 44.01,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 59,
+        "timestamp": "+59h",
+        "pm25": 52.86,
+        "actual_pm25": 86.5,
+        "tcn_pm25": 45.59,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 60,
+        "timestamp": "+60h",
+        "pm25": 51.53,
+        "actual_pm25": 72.75,
+        "tcn_pm25": 44.98,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 61,
+        "timestamp": "+61h",
+        "pm25": 48.67,
+        "actual_pm25": 83.25,
+        "tcn_pm25": 44.66,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 62,
+        "timestamp": "+62h",
+        "pm25": 48.24,
+        "actual_pm25": 111.5,
+        "tcn_pm25": 43.55,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 63,
+        "timestamp": "+63h",
+        "pm25": 53.63,
+        "actual_pm25": 90.25,
+        "tcn_pm25": 46.62,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 64,
+        "timestamp": "+64h",
+        "pm25": 51.63,
+        "actual_pm25": 74.25,
+        "tcn_pm25": 44.77,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 65,
+        "timestamp": "+65h",
+        "pm25": 51.67,
+        "actual_pm25": 64.0,
+        "tcn_pm25": 36.19,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 66,
+        "timestamp": "+66h",
+        "pm25": 49.18,
+        "actual_pm25": 50.25,
+        "tcn_pm25": 32.94,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 67,
+        "timestamp": "+67h",
+        "pm25": 48.98,
+        "actual_pm25": 54.5,
+        "tcn_pm25": 34.69,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 68,
+        "timestamp": "+68h",
+        "pm25": 48.85,
+        "actual_pm25": 57.75,
+        "tcn_pm25": 32.9,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 69,
+        "timestamp": "+69h",
+        "pm25": 47.12,
+        "actual_pm25": 66.0,
+        "tcn_pm25": 35.78,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 70,
+        "timestamp": "+70h",
+        "pm25": 48.13,
+        "actual_pm25": 76.0,
+        "tcn_pm25": 37.71,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 71,
+        "timestamp": "+71h",
+        "pm25": 48.0,
+        "actual_pm25": 72.75,
+        "tcn_pm25": 42.84,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 72,
+        "timestamp": "+72h",
+        "pm25": 48.51,
+        "actual_pm25": 55.25,
+        "tcn_pm25": 43.09,
+        "spike_probability": 0.0
+      }
+    ],
+    "actual": [
+      44.0,
+      31.5,
+      30.0,
+      27.75,
+      21.0,
+      22.5,
+      33.5,
+      52.25,
+      47.0,
+      39.25,
+      39.25,
+      28.0,
+      53.0,
+      54.25,
+      63.25,
+      76.5,
+      65.25,
+      53.25,
+      45.25,
+      23.0,
+      9.5,
+      16.25,
+      25.25,
+      34.0,
+      41.75,
+      43.5,
+      33.0,
+      32.5,
+      32.75,
+      38.0,
+      57.25,
+      76.75,
+      77.75,
+      78.75,
+      85.75,
+      72.5,
+      90.0,
+      67.25,
+      65.25,
+      49.75,
+      55.25,
+      55.0,
+      45.75,
+      22.75,
+      15.0,
+      32.75,
+      44.25,
+      61.0,
+      76.5,
+      64.0,
+      70.0,
+      50.5,
+      52.0,
+      71.75,
+      68.75,
+      55.75,
+      86.0,
+      76.0,
+      86.5,
+      72.75,
+      83.25,
+      111.5,
+      90.25,
+      74.25,
+      64.0,
+      50.25,
+      54.5,
+      57.75,
+      66.0,
+      76.0,
+      72.75,
+      55.25
+    ],
+    "tcn": [
+      64.53,
+      50.14,
+      45.95,
+      42.65,
+      44.69,
+      45.31,
+      46.01,
+      46.9,
+      43.68,
+      42.17,
+      41.47,
+      41.14,
+      50.48,
+      49.07,
+      53.19,
+      59.97,
+      64.61,
+      61.66,
+      59.4,
+      60.14,
+      62.55,
+      59.47,
+      60.51,
+      60.7,
+      60.59,
+      57.52,
+      54.18,
+      51.74,
+      52.91,
+      53.43,
+      55.65,
+      58.26,
+      63.36,
+      66.32,
+      64.38,
+      59.59,
+      57.48,
+      59.81,
+      60.2,
+      60.13,
+      57.85,
+      57.39,
+      55.13,
+      50.81,
+      49.43,
+      47.72,
+      55.02,
+      64.07,
+      59.78,
+      55.2,
+      55.6,
+      52.54,
+      50.25,
+      51.83,
+      48.36,
+      51.95,
+      44.06,
+      44.01,
+      45.59,
+      44.98,
+      44.66,
+      43.55,
+      46.62,
+      44.77,
+      36.19,
+      32.94,
+      34.69,
+      32.9,
+      35.78,
+      37.71,
+      42.84,
+      43.09
+    ]
+  },
+  "1686": {
+    "summary_statistics": {
+      "avg_pm25": 98.37,
+      "overall_category": "Moderate",
+      "overall_category_color": "#FF9933",
+      "peak_pm25": 172.98,
+      "peak_hour": 69,
+      "peak_timestamp": "Hour +69",
+      "avg_spike_probability": 0.003
+    },
+    "forecast": [
+      {
+        "hour": 1,
+        "timestamp": "+1h",
+        "pm25": 84.59,
+        "actual_pm25": 118.5,
+        "tcn_pm25": 115.34,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 2,
+        "timestamp": "+2h",
+        "pm25": 91.48,
+        "actual_pm25": 84.25,
+        "tcn_pm25": 112.86,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 3,
+        "timestamp": "+3h",
+        "pm25": 86.36,
+        "actual_pm25": 73.75,
+        "tcn_pm25": 113.9,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 4,
+        "timestamp": "+4h",
+        "pm25": 68.72,
+        "actual_pm25": 62.33,
+        "tcn_pm25": 100.74,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 5,
+        "timestamp": "+5h",
+        "pm25": 62.0,
+        "actual_pm25": 48.25,
+        "tcn_pm25": 85.25,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 6,
+        "timestamp": "+6h",
+        "pm25": 58.08,
+        "actual_pm25": 29.0,
+        "tcn_pm25": 69.53,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 7,
+        "timestamp": "+7h",
+        "pm25": 58.45,
+        "actual_pm25": 15.25,
+        "tcn_pm25": 67.49,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 8,
+        "timestamp": "+8h",
+        "pm25": 56.69,
+        "actual_pm25": 22.0,
+        "tcn_pm25": 64.71,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 9,
+        "timestamp": "+9h",
+        "pm25": 52.09,
+        "actual_pm25": 33.75,
+        "tcn_pm25": 60.57,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 10,
+        "timestamp": "+10h",
+        "pm25": 56.64,
+        "actual_pm25": 45.25,
+        "tcn_pm25": 57.08,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 11,
+        "timestamp": "+11h",
+        "pm25": 61.1,
+        "actual_pm25": 54.25,
+        "tcn_pm25": 62.8,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 12,
+        "timestamp": "+12h",
+        "pm25": 71.81,
+        "actual_pm25": 54.5,
+        "tcn_pm25": 65.78,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 13,
+        "timestamp": "+13h",
+        "pm25": 78.27,
+        "actual_pm25": 62.75,
+        "tcn_pm25": 68.67,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 14,
+        "timestamp": "+14h",
+        "pm25": 83.07,
+        "actual_pm25": 95.5,
+        "tcn_pm25": 73.24,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 15,
+        "timestamp": "+15h",
+        "pm25": 89.63,
+        "actual_pm25": 171.25,
+        "tcn_pm25": 81.76,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 16,
+        "timestamp": "+16h",
+        "pm25": 104.13,
+        "actual_pm25": 115.5,
+        "tcn_pm25": 78.84,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 17,
+        "timestamp": "+17h",
+        "pm25": 93.56,
+        "actual_pm25": 86.5,
+        "tcn_pm25": 73.16,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 18,
+        "timestamp": "+18h",
+        "pm25": 85.29,
+        "actual_pm25": 70.5,
+        "tcn_pm25": 69.36,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 19,
+        "timestamp": "+19h",
+        "pm25": 80.79,
+        "actual_pm25": 62.25,
+        "tcn_pm25": 75.87,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 20,
+        "timestamp": "+20h",
+        "pm25": 79.46,
+        "actual_pm25": 102.75,
+        "tcn_pm25": 76.44,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 21,
+        "timestamp": "+21h",
+        "pm25": 79.09,
+        "actual_pm25": 155.0,
+        "tcn_pm25": 76.61,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 22,
+        "timestamp": "+22h",
+        "pm25": 82.82,
+        "actual_pm25": 156.75,
+        "tcn_pm25": 80.11,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 23,
+        "timestamp": "+23h",
+        "pm25": 82.71,
+        "actual_pm25": 109.25,
+        "tcn_pm25": 83.19,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 24,
+        "timestamp": "+24h",
+        "pm25": 94.09,
+        "actual_pm25": 82.5,
+        "tcn_pm25": 85.15,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 25,
+        "timestamp": "+25h",
+        "pm25": 98.1,
+        "actual_pm25": 72.5,
+        "tcn_pm25": 78.85,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 26,
+        "timestamp": "+26h",
+        "pm25": 89.93,
+        "actual_pm25": 76.5,
+        "tcn_pm25": 79.16,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 27,
+        "timestamp": "+27h",
+        "pm25": 88.73,
+        "actual_pm25": 84.75,
+        "tcn_pm25": 75.79,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 28,
+        "timestamp": "+28h",
+        "pm25": 68.55,
+        "actual_pm25": 81.0,
+        "tcn_pm25": 69.08,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 29,
+        "timestamp": "+29h",
+        "pm25": 55.87,
+        "actual_pm25": 57.25,
+        "tcn_pm25": 65.56,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 30,
+        "timestamp": "+30h",
+        "pm25": 51.53,
+        "actual_pm25": 35.0,
+        "tcn_pm25": 63.68,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 31,
+        "timestamp": "+31h",
+        "pm25": 49.27,
+        "actual_pm25": 20.25,
+        "tcn_pm25": 61.96,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 32,
+        "timestamp": "+32h",
+        "pm25": 49.86,
+        "actual_pm25": 22.5,
+        "tcn_pm25": 60.97,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 33,
+        "timestamp": "+33h",
+        "pm25": 51.04,
+        "actual_pm25": 35.25,
+        "tcn_pm25": 67.62,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 34,
+        "timestamp": "+34h",
+        "pm25": 65.44,
+        "actual_pm25": 61.25,
+        "tcn_pm25": 76.85,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 35,
+        "timestamp": "+35h",
+        "pm25": 78.96,
+        "actual_pm25": 57.0,
+        "tcn_pm25": 81.64,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 36,
+        "timestamp": "+36h",
+        "pm25": 85.41,
+        "actual_pm25": 47.25,
+        "tcn_pm25": 89.69,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 37,
+        "timestamp": "+37h",
+        "pm25": 89.4,
+        "actual_pm25": 100.5,
+        "tcn_pm25": 93.65,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 38,
+        "timestamp": "+38h",
+        "pm25": 92.43,
+        "actual_pm25": 133.0,
+        "tcn_pm25": 100.63,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 39,
+        "timestamp": "+39h",
+        "pm25": 102.82,
+        "actual_pm25": 137.5,
+        "tcn_pm25": 98.44,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 40,
+        "timestamp": "+40h",
+        "pm25": 118.18,
+        "actual_pm25": 152.0,
+        "tcn_pm25": 107.75,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 41,
+        "timestamp": "+41h",
+        "pm25": 125.98,
+        "actual_pm25": 179.75,
+        "tcn_pm25": 114.02,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 42,
+        "timestamp": "+42h",
+        "pm25": 127.93,
+        "actual_pm25": 173.75,
+        "tcn_pm25": 112.48,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 43,
+        "timestamp": "+43h",
+        "pm25": 139.69,
+        "actual_pm25": 179.5,
+        "tcn_pm25": 117.96,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 44,
+        "timestamp": "+44h",
+        "pm25": 146.61,
+        "actual_pm25": 195.0,
+        "tcn_pm25": 109.19,
+        "spike_probability": 0.006
+      },
+      {
+        "hour": 45,
+        "timestamp": "+45h",
+        "pm25": 157.33,
+        "actual_pm25": 220.25,
+        "tcn_pm25": 116.93,
+        "spike_probability": 0.009
+      },
+      {
+        "hour": 46,
+        "timestamp": "+46h",
+        "pm25": 157.23,
+        "actual_pm25": 244.75,
+        "tcn_pm25": 115.23,
+        "spike_probability": 0.009
+      },
+      {
+        "hour": 47,
+        "timestamp": "+47h",
+        "pm25": 155.88,
+        "actual_pm25": 225.75,
+        "tcn_pm25": 114.31,
+        "spike_probability": 0.008
+      },
+      {
+        "hour": 48,
+        "timestamp": "+48h",
+        "pm25": 161.36,
+        "actual_pm25": 205.0,
+        "tcn_pm25": 124.9,
+        "spike_probability": 0.01
+      },
+      {
+        "hour": 49,
+        "timestamp": "+49h",
+        "pm25": 148.75,
+        "actual_pm25": 141.25,
+        "tcn_pm25": 121.86,
+        "spike_probability": 0.006
+      },
+      {
+        "hour": 50,
+        "timestamp": "+50h",
+        "pm25": 140.04,
+        "actual_pm25": 122.5,
+        "tcn_pm25": 115.4,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 51,
+        "timestamp": "+51h",
+        "pm25": 107.6,
+        "actual_pm25": 96.25,
+        "tcn_pm25": 107.1,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 52,
+        "timestamp": "+52h",
+        "pm25": 79.3,
+        "actual_pm25": 87.75,
+        "tcn_pm25": 83.49,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 53,
+        "timestamp": "+53h",
+        "pm25": 69.18,
+        "actual_pm25": 91.5,
+        "tcn_pm25": 79.09,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 54,
+        "timestamp": "+54h",
+        "pm25": 62.15,
+        "actual_pm25": 75.75,
+        "tcn_pm25": 61.63,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 55,
+        "timestamp": "+55h",
+        "pm25": 61.97,
+        "actual_pm25": 61.25,
+        "tcn_pm25": 59.76,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 56,
+        "timestamp": "+56h",
+        "pm25": 62.74,
+        "actual_pm25": 38.5,
+        "tcn_pm25": 51.05,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 57,
+        "timestamp": "+57h",
+        "pm25": 70.06,
+        "actual_pm25": 45.0,
+        "tcn_pm25": 61.15,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 58,
+        "timestamp": "+58h",
+        "pm25": 77.51,
+        "actual_pm25": 72.75,
+        "tcn_pm25": 67.63,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 59,
+        "timestamp": "+59h",
+        "pm25": 88.24,
+        "actual_pm25": 97.75,
+        "tcn_pm25": 72.57,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 60,
+        "timestamp": "+60h",
+        "pm25": 93.71,
+        "actual_pm25": 53.5,
+        "tcn_pm25": 79.46,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 61,
+        "timestamp": "+61h",
+        "pm25": 117.39,
+        "actual_pm25": 42.0,
+        "tcn_pm25": 90.92,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 62,
+        "timestamp": "+62h",
+        "pm25": 123.81,
+        "actual_pm25": 60.0,
+        "tcn_pm25": 97.87,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 63,
+        "timestamp": "+63h",
+        "pm25": 131.01,
+        "actual_pm25": 116.5,
+        "tcn_pm25": 119.1,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 64,
+        "timestamp": "+64h",
+        "pm25": 132.67,
+        "actual_pm25": 172.75,
+        "tcn_pm25": 126.34,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 65,
+        "timestamp": "+65h",
+        "pm25": 146.7,
+        "actual_pm25": 165.0,
+        "tcn_pm25": 150.23,
+        "spike_probability": 0.006
+      },
+      {
+        "hour": 66,
+        "timestamp": "+66h",
+        "pm25": 159.62,
+        "actual_pm25": 179.0,
+        "tcn_pm25": 154.72,
+        "spike_probability": 0.009
+      },
+      {
+        "hour": 67,
+        "timestamp": "+67h",
+        "pm25": 170.44,
+        "actual_pm25": 157.25,
+        "tcn_pm25": 173.81,
+        "spike_probability": 0.013
+      },
+      {
+        "hour": 68,
+        "timestamp": "+68h",
+        "pm25": 172.17,
+        "actual_pm25": 181.0,
+        "tcn_pm25": 199.62,
+        "spike_probability": 0.014
+      },
+      {
+        "hour": 69,
+        "timestamp": "+69h",
+        "pm25": 172.98,
+        "actual_pm25": 171.25,
+        "tcn_pm25": 178.2,
+        "spike_probability": 0.014
+      },
+      {
+        "hour": 70,
+        "timestamp": "+70h",
+        "pm25": 131.68,
+        "actual_pm25": 153.25,
+        "tcn_pm25": 151.66,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 71,
+        "timestamp": "+71h",
+        "pm25": 155.33,
+        "actual_pm25": 164.0,
+        "tcn_pm25": 146.65,
+        "spike_probability": 0.008
+      },
+      {
+        "hour": 72,
+        "timestamp": "+72h",
+        "pm25": 158.97,
+        "actual_pm25": 160.0,
+        "tcn_pm25": 150.35,
+        "spike_probability": 0.009
+      }
+    ],
+    "actual": [
+      118.5,
+      84.25,
+      73.75,
+      62.33,
+      48.25,
+      29.0,
+      15.25,
+      22.0,
+      33.75,
+      45.25,
+      54.25,
+      54.5,
+      62.75,
+      95.5,
+      171.25,
+      115.5,
+      86.5,
+      70.5,
+      62.25,
+      102.75,
+      155.0,
+      156.75,
+      109.25,
+      82.5,
+      72.5,
+      76.5,
+      84.75,
+      81.0,
+      57.25,
+      35.0,
+      20.25,
+      22.5,
+      35.25,
+      61.25,
+      57.0,
+      47.25,
+      100.5,
+      133.0,
+      137.5,
+      152.0,
+      179.75,
+      173.75,
+      179.5,
+      195.0,
+      220.25,
+      244.75,
+      225.75,
+      205.0,
+      141.25,
+      122.5,
+      96.25,
+      87.75,
+      91.5,
+      75.75,
+      61.25,
+      38.5,
+      45.0,
+      72.75,
+      97.75,
+      53.5,
+      42.0,
+      60.0,
+      116.5,
+      172.75,
+      165.0,
+      179.0,
+      157.25,
+      181.0,
+      171.25,
+      153.25,
+      164.0,
+      160.0
+    ],
+    "tcn": [
+      115.34,
+      112.86,
+      113.9,
+      100.74,
+      85.25,
+      69.53,
+      67.49,
+      64.71,
+      60.57,
+      57.08,
+      62.8,
+      65.78,
+      68.67,
+      73.24,
+      81.76,
+      78.84,
+      73.16,
+      69.36,
+      75.87,
+      76.44,
+      76.61,
+      80.11,
+      83.19,
+      85.15,
+      78.85,
+      79.16,
+      75.79,
+      69.08,
+      65.56,
+      63.68,
+      61.96,
+      60.97,
+      67.62,
+      76.85,
+      81.64,
+      89.69,
+      93.65,
+      100.63,
+      98.44,
+      107.75,
+      114.02,
+      112.48,
+      117.96,
+      109.19,
+      116.93,
+      115.23,
+      114.31,
+      124.9,
+      121.86,
+      115.4,
+      107.1,
+      83.49,
+      79.09,
+      61.63,
+      59.76,
+      51.05,
+      61.15,
+      67.63,
+      72.57,
+      79.46,
+      90.92,
+      97.87,
+      119.1,
+      126.34,
+      150.23,
+      154.72,
+      173.81,
+      199.62,
+      178.2,
+      151.66,
+      146.65,
+      150.35
+    ]
+  },
+  "1927": {
+    "summary_statistics": {
+      "avg_pm25": 69.17,
+      "overall_category": "Moderate",
+      "overall_category_color": "#FF9933",
+      "peak_pm25": 122.88,
+      "peak_hour": 20,
+      "peak_timestamp": "Hour +20",
+      "avg_spike_probability": 0.0
+    },
+    "forecast": [
+      {
+        "hour": 1,
+        "timestamp": "+1h",
+        "pm25": 90.97,
+        "actual_pm25": 50.25,
+        "tcn_pm25": 91.53,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 2,
+        "timestamp": "+2h",
+        "pm25": 83.9,
+        "actual_pm25": 38.5,
+        "tcn_pm25": 82.53,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 3,
+        "timestamp": "+3h",
+        "pm25": 62.72,
+        "actual_pm25": 39.75,
+        "tcn_pm25": 71.79,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 4,
+        "timestamp": "+4h",
+        "pm25": 45.79,
+        "actual_pm25": 45.5,
+        "tcn_pm25": 67.72,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 5,
+        "timestamp": "+5h",
+        "pm25": 42.46,
+        "actual_pm25": 35.25,
+        "tcn_pm25": 63.89,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 6,
+        "timestamp": "+6h",
+        "pm25": 49.08,
+        "actual_pm25": 22.25,
+        "tcn_pm25": 57.84,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 7,
+        "timestamp": "+7h",
+        "pm25": 41.91,
+        "actual_pm25": 7.75,
+        "tcn_pm25": 54.73,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 8,
+        "timestamp": "+8h",
+        "pm25": 51.44,
+        "actual_pm25": 9.5,
+        "tcn_pm25": 60.1,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 9,
+        "timestamp": "+9h",
+        "pm25": 63.18,
+        "actual_pm25": 16.75,
+        "tcn_pm25": 60.38,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 10,
+        "timestamp": "+10h",
+        "pm25": 66.63,
+        "actual_pm25": 25.5,
+        "tcn_pm25": 62.97,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 11,
+        "timestamp": "+11h",
+        "pm25": 75.95,
+        "actual_pm25": 59.25,
+        "tcn_pm25": 62.53,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 12,
+        "timestamp": "+12h",
+        "pm25": 73.12,
+        "actual_pm25": 75.0,
+        "tcn_pm25": 70.77,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 13,
+        "timestamp": "+13h",
+        "pm25": 77.15,
+        "actual_pm25": 71.75,
+        "tcn_pm25": 79.5,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 14,
+        "timestamp": "+14h",
+        "pm25": 80.88,
+        "actual_pm25": 67.75,
+        "tcn_pm25": 81.84,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 15,
+        "timestamp": "+15h",
+        "pm25": 85.85,
+        "actual_pm25": 82.25,
+        "tcn_pm25": 94.08,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 16,
+        "timestamp": "+16h",
+        "pm25": 100.85,
+        "actual_pm25": 65.5,
+        "tcn_pm25": 123.29,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 17,
+        "timestamp": "+17h",
+        "pm25": 102.4,
+        "actual_pm25": 43.0,
+        "tcn_pm25": 124.44,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 18,
+        "timestamp": "+18h",
+        "pm25": 111.07,
+        "actual_pm25": 55.0,
+        "tcn_pm25": 128.28,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 19,
+        "timestamp": "+19h",
+        "pm25": 119.3,
+        "actual_pm25": 59.0,
+        "tcn_pm25": 120.09,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 20,
+        "timestamp": "+20h",
+        "pm25": 122.88,
+        "actual_pm25": 48.0,
+        "tcn_pm25": 99.27,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 21,
+        "timestamp": "+21h",
+        "pm25": 108.21,
+        "actual_pm25": 61.25,
+        "tcn_pm25": 91.12,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 22,
+        "timestamp": "+22h",
+        "pm25": 93.14,
+        "actual_pm25": 63.25,
+        "tcn_pm25": 83.53,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 23,
+        "timestamp": "+23h",
+        "pm25": 80.16,
+        "actual_pm25": 60.25,
+        "tcn_pm25": 94.65,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 24,
+        "timestamp": "+24h",
+        "pm25": 67.49,
+        "actual_pm25": 64.0,
+        "tcn_pm25": 95.99,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 25,
+        "timestamp": "+25h",
+        "pm25": 63.76,
+        "actual_pm25": 54.25,
+        "tcn_pm25": 94.91,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 26,
+        "timestamp": "+26h",
+        "pm25": 53.14,
+        "actual_pm25": 48.75,
+        "tcn_pm25": 92.7,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 27,
+        "timestamp": "+27h",
+        "pm25": 45.0,
+        "actual_pm25": 41.25,
+        "tcn_pm25": 85.12,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 28,
+        "timestamp": "+28h",
+        "pm25": 37.94,
+        "actual_pm25": 45.0,
+        "tcn_pm25": 67.44,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 29,
+        "timestamp": "+29h",
+        "pm25": 39.8,
+        "actual_pm25": 34.75,
+        "tcn_pm25": 63.48,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 30,
+        "timestamp": "+30h",
+        "pm25": 40.25,
+        "actual_pm25": 25.25,
+        "tcn_pm25": 47.96,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 31,
+        "timestamp": "+31h",
+        "pm25": 40.57,
+        "actual_pm25": 8.75,
+        "tcn_pm25": 48.13,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 32,
+        "timestamp": "+32h",
+        "pm25": 41.06,
+        "actual_pm25": 12.0,
+        "tcn_pm25": 48.6,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 33,
+        "timestamp": "+33h",
+        "pm25": 43.27,
+        "actual_pm25": 16.75,
+        "tcn_pm25": 54.61,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 34,
+        "timestamp": "+34h",
+        "pm25": 44.57,
+        "actual_pm25": 30.0,
+        "tcn_pm25": 60.68,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 35,
+        "timestamp": "+35h",
+        "pm25": 50.47,
+        "actual_pm25": 57.25,
+        "tcn_pm25": 64.92,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 36,
+        "timestamp": "+36h",
+        "pm25": 57.67,
+        "actual_pm25": 76.75,
+        "tcn_pm25": 76.67,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 37,
+        "timestamp": "+37h",
+        "pm25": 66.27,
+        "actual_pm25": 108.0,
+        "tcn_pm25": 93.59,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 38,
+        "timestamp": "+38h",
+        "pm25": 69.12,
+        "actual_pm25": 111.5,
+        "tcn_pm25": 90.22,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 39,
+        "timestamp": "+39h",
+        "pm25": 71.02,
+        "actual_pm25": 103.0,
+        "tcn_pm25": 92.35,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 40,
+        "timestamp": "+40h",
+        "pm25": 74.59,
+        "actual_pm25": 103.25,
+        "tcn_pm25": 77.76,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 41,
+        "timestamp": "+41h",
+        "pm25": 67.98,
+        "actual_pm25": 108.0,
+        "tcn_pm25": 74.74,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 42,
+        "timestamp": "+42h",
+        "pm25": 61.76,
+        "actual_pm25": 99.0,
+        "tcn_pm25": 72.01,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 43,
+        "timestamp": "+43h",
+        "pm25": 67.49,
+        "actual_pm25": 127.75,
+        "tcn_pm25": 78.92,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 44,
+        "timestamp": "+44h",
+        "pm25": 65.35,
+        "actual_pm25": 149.5,
+        "tcn_pm25": 68.53,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 45,
+        "timestamp": "+45h",
+        "pm25": 71.92,
+        "actual_pm25": 120.25,
+        "tcn_pm25": 67.47,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 46,
+        "timestamp": "+46h",
+        "pm25": 78.15,
+        "actual_pm25": 117.75,
+        "tcn_pm25": 71.33,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 47,
+        "timestamp": "+47h",
+        "pm25": 87.75,
+        "actual_pm25": 86.0,
+        "tcn_pm25": 68.2,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 48,
+        "timestamp": "+48h",
+        "pm25": 94.15,
+        "actual_pm25": 72.5,
+        "tcn_pm25": 68.13,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 49,
+        "timestamp": "+49h",
+        "pm25": 98.26,
+        "actual_pm25": 63.25,
+        "tcn_pm25": 55.65,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 50,
+        "timestamp": "+50h",
+        "pm25": 107.5,
+        "actual_pm25": 49.75,
+        "tcn_pm25": 53.61,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 51,
+        "timestamp": "+51h",
+        "pm25": 90.43,
+        "actual_pm25": 50.75,
+        "tcn_pm25": 43.07,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 52,
+        "timestamp": "+52h",
+        "pm25": 74.74,
+        "actual_pm25": 48.25,
+        "tcn_pm25": 37.52,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 53,
+        "timestamp": "+53h",
+        "pm25": 55.86,
+        "actual_pm25": 47.25,
+        "tcn_pm25": 31.74,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 54,
+        "timestamp": "+54h",
+        "pm25": 54.15,
+        "actual_pm25": 29.5,
+        "tcn_pm25": 29.02,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 55,
+        "timestamp": "+55h",
+        "pm25": 50.35,
+        "actual_pm25": 17.5,
+        "tcn_pm25": 31.95,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 56,
+        "timestamp": "+56h",
+        "pm25": 45.07,
+        "actual_pm25": 14.25,
+        "tcn_pm25": 27.68,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 57,
+        "timestamp": "+57h",
+        "pm25": 45.37,
+        "actual_pm25": 19.5,
+        "tcn_pm25": 28.82,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 58,
+        "timestamp": "+58h",
+        "pm25": 46.28,
+        "actual_pm25": 32.75,
+        "tcn_pm25": 36.05,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 59,
+        "timestamp": "+59h",
+        "pm25": 53.46,
+        "actual_pm25": 63.0,
+        "tcn_pm25": 39.7,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 60,
+        "timestamp": "+60h",
+        "pm25": 62.18,
+        "actual_pm25": 88.25,
+        "tcn_pm25": 52.37,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 61,
+        "timestamp": "+61h",
+        "pm25": 61.66,
+        "actual_pm25": 142.0,
+        "tcn_pm25": 59.27,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 62,
+        "timestamp": "+62h",
+        "pm25": 69.69,
+        "actual_pm25": 195.0,
+        "tcn_pm25": 63.68,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 63,
+        "timestamp": "+63h",
+        "pm25": 77.07,
+        "actual_pm25": 266.5,
+        "tcn_pm25": 65.27,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 64,
+        "timestamp": "+64h",
+        "pm25": 84.17,
+        "actual_pm25": 362.25,
+        "tcn_pm25": 64.36,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 65,
+        "timestamp": "+65h",
+        "pm25": 81.45,
+        "actual_pm25": 285.25,
+        "tcn_pm25": 66.9,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 66,
+        "timestamp": "+66h",
+        "pm25": 80.7,
+        "actual_pm25": 243.0,
+        "tcn_pm25": 63.41,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 67,
+        "timestamp": "+67h",
+        "pm25": 78.5,
+        "actual_pm25": 266.75,
+        "tcn_pm25": 63.1,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 68,
+        "timestamp": "+68h",
+        "pm25": 76.99,
+        "actual_pm25": 241.75,
+        "tcn_pm25": 60.12,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 69,
+        "timestamp": "+69h",
+        "pm25": 68.79,
+        "actual_pm25": 236.75,
+        "tcn_pm25": 59.96,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 70,
+        "timestamp": "+70h",
+        "pm25": 63.56,
+        "actual_pm25": 207.75,
+        "tcn_pm25": 51.22,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 71,
+        "timestamp": "+71h",
+        "pm25": 62.11,
+        "actual_pm25": 236.5,
+        "tcn_pm25": 56.08,
+        "spike_probability": 0.0
+      },
+      {
+        "hour": 72,
+        "timestamp": "+72h",
+        "pm25": 62.33,
+        "actual_pm25": 211.25,
+        "tcn_pm25": 46.96,
+        "spike_probability": 0.0
+      }
+    ],
+    "actual": [
+      50.25,
+      38.5,
+      39.75,
+      45.5,
+      35.25,
+      22.25,
+      7.75,
+      9.5,
+      16.75,
+      25.5,
+      59.25,
+      75.0,
+      71.75,
+      67.75,
+      82.25,
+      65.5,
+      43.0,
+      55.0,
+      59.0,
+      48.0,
+      61.25,
+      63.25,
+      60.25,
+      64.0,
+      54.25,
+      48.75,
+      41.25,
+      45.0,
+      34.75,
+      25.25,
+      8.75,
+      12.0,
+      16.75,
+      30.0,
+      57.25,
+      76.75,
+      108.0,
+      111.5,
+      103.0,
+      103.25,
+      108.0,
+      99.0,
+      127.75,
+      149.5,
+      120.25,
+      117.75,
+      86.0,
+      72.5,
+      63.25,
+      49.75,
+      50.75,
+      48.25,
+      47.25,
+      29.5,
+      17.5,
+      14.25,
+      19.5,
+      32.75,
+      63.0,
+      88.25,
+      142.0,
+      195.0,
+      266.5,
+      362.25,
+      285.25,
+      243.0,
+      266.75,
+      241.75,
+      236.75,
+      207.75,
+      236.5,
+      211.25
+    ],
+    "tcn": [
+      91.53,
+      82.53,
+      71.79,
+      67.72,
+      63.89,
+      57.84,
+      54.73,
+      60.1,
+      60.38,
+      62.97,
+      62.53,
+      70.77,
+      79.5,
+      81.84,
+      94.08,
+      123.29,
+      124.44,
+      128.28,
+      120.09,
+      99.27,
+      91.12,
+      83.53,
+      94.65,
+      95.99,
+      94.91,
+      92.7,
+      85.12,
+      67.44,
+      63.48,
+      47.96,
+      48.13,
+      48.6,
+      54.61,
+      60.68,
+      64.92,
+      76.67,
+      93.59,
+      90.22,
+      92.35,
+      77.76,
+      74.74,
+      72.01,
+      78.92,
+      68.53,
+      67.47,
+      71.33,
+      68.2,
+      68.13,
+      55.65,
+      53.61,
+      43.07,
+      37.52,
+      31.74,
+      29.02,
+      31.95,
+      27.68,
+      28.82,
+      36.05,
+      39.7,
+      52.37,
+      59.27,
+      63.68,
+      65.27,
+      64.36,
+      66.9,
+      63.41,
+      63.1,
+      60.12,
+      59.96,
+      51.22,
+      56.08,
+      46.96
+    ]
+  },
+  "123": {
+    "summary_statistics": {
+      "avg_pm25": 154.79,
+      "overall_category": "Poor",
+      "overall_category_color": "#CC0033",
+      "peak_pm25": 326.56,
+      "peak_hour": 72,
+      "peak_timestamp": "Hour +72",
+      "avg_spike_probability": 0.034
+    },
+    "forecast": [
+      {
+        "hour": 1,
+        "timestamp": "+1h",
+        "pm25": 185.7,
+        "actual_pm25": 135.25,
+        "tcn_pm25": 194.3,
+        "spike_probability": 0.022
+      },
+      {
+        "hour": 2,
+        "timestamp": "+2h",
+        "pm25": 173.48,
+        "actual_pm25": 140.75,
+        "tcn_pm25": 182.57,
+        "spike_probability": 0.015
+      },
+      {
+        "hour": 3,
+        "timestamp": "+3h",
+        "pm25": 142.84,
+        "actual_pm25": 118.0,
+        "tcn_pm25": 160.79,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 4,
+        "timestamp": "+4h",
+        "pm25": 138.05,
+        "actual_pm25": 112.5,
+        "tcn_pm25": 160.15,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 5,
+        "timestamp": "+5h",
+        "pm25": 132.99,
+        "actual_pm25": 105.0,
+        "tcn_pm25": 144.82,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 6,
+        "timestamp": "+6h",
+        "pm25": 136.31,
+        "actual_pm25": 107.75,
+        "tcn_pm25": 154.82,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 7,
+        "timestamp": "+7h",
+        "pm25": 139.95,
+        "actual_pm25": 116.5,
+        "tcn_pm25": 155.84,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 8,
+        "timestamp": "+8h",
+        "pm25": 140.5,
+        "actual_pm25": 112.0,
+        "tcn_pm25": 149.44,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 9,
+        "timestamp": "+9h",
+        "pm25": 137.49,
+        "actual_pm25": 86.75,
+        "tcn_pm25": 138.91,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 10,
+        "timestamp": "+10h",
+        "pm25": 142.36,
+        "actual_pm25": 59.25,
+        "tcn_pm25": 127.01,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 11,
+        "timestamp": "+11h",
+        "pm25": 131.14,
+        "actual_pm25": 42.0,
+        "tcn_pm25": 118.6,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 12,
+        "timestamp": "+12h",
+        "pm25": 123.66,
+        "actual_pm25": 45.5,
+        "tcn_pm25": 105.2,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 13,
+        "timestamp": "+13h",
+        "pm25": 120.05,
+        "actual_pm25": 52.25,
+        "tcn_pm25": 95.85,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 14,
+        "timestamp": "+14h",
+        "pm25": 113.18,
+        "actual_pm25": 40.5,
+        "tcn_pm25": 96.33,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 15,
+        "timestamp": "+15h",
+        "pm25": 113.01,
+        "actual_pm25": 44.75,
+        "tcn_pm25": 100.17,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 16,
+        "timestamp": "+16h",
+        "pm25": 114.83,
+        "actual_pm25": 74.75,
+        "tcn_pm25": 101.86,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 17,
+        "timestamp": "+17h",
+        "pm25": 125.28,
+        "actual_pm25": 126.5,
+        "tcn_pm25": 111.0,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 18,
+        "timestamp": "+18h",
+        "pm25": 144.24,
+        "actual_pm25": 197.25,
+        "tcn_pm25": 120.98,
+        "spike_probability": 0.006
+      },
+      {
+        "hour": 19,
+        "timestamp": "+19h",
+        "pm25": 165.28,
+        "actual_pm25": 290.75,
+        "tcn_pm25": 130.68,
+        "spike_probability": 0.011
+      },
+      {
+        "hour": 20,
+        "timestamp": "+20h",
+        "pm25": 187.14,
+        "actual_pm25": 334.0,
+        "tcn_pm25": 136.15,
+        "spike_probability": 0.023
+      },
+      {
+        "hour": 21,
+        "timestamp": "+21h",
+        "pm25": 197.08,
+        "actual_pm25": 423.75,
+        "tcn_pm25": 139.02,
+        "spike_probability": 0.031
+      },
+      {
+        "hour": 22,
+        "timestamp": "+22h",
+        "pm25": 190.08,
+        "actual_pm25": 363.5,
+        "tcn_pm25": 135.21,
+        "spike_probability": 0.025
+      },
+      {
+        "hour": 23,
+        "timestamp": "+23h",
+        "pm25": 183.68,
+        "actual_pm25": 387.5,
+        "tcn_pm25": 130.79,
+        "spike_probability": 0.02
+      },
+      {
+        "hour": 24,
+        "timestamp": "+24h",
+        "pm25": 168.76,
+        "actual_pm25": 548.5,
+        "tcn_pm25": 130.36,
+        "spike_probability": 0.012
+      },
+      {
+        "hour": 25,
+        "timestamp": "+25h",
+        "pm25": 169.98,
+        "actual_pm25": 382.0,
+        "tcn_pm25": 136.41,
+        "spike_probability": 0.013
+      },
+      {
+        "hour": 26,
+        "timestamp": "+26h",
+        "pm25": 157.09,
+        "actual_pm25": 236.75,
+        "tcn_pm25": 136.65,
+        "spike_probability": 0.008
+      },
+      {
+        "hour": 27,
+        "timestamp": "+27h",
+        "pm25": 146.63,
+        "actual_pm25": 178.5,
+        "tcn_pm25": 135.41,
+        "spike_probability": 0.006
+      },
+      {
+        "hour": 28,
+        "timestamp": "+28h",
+        "pm25": 143.81,
+        "actual_pm25": 197.5,
+        "tcn_pm25": 131.06,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 29,
+        "timestamp": "+29h",
+        "pm25": 134.47,
+        "actual_pm25": 237.25,
+        "tcn_pm25": 137.87,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 30,
+        "timestamp": "+30h",
+        "pm25": 138.13,
+        "actual_pm25": 172.75,
+        "tcn_pm25": 142.17,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 31,
+        "timestamp": "+31h",
+        "pm25": 134.34,
+        "actual_pm25": 178.25,
+        "tcn_pm25": 142.49,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 32,
+        "timestamp": "+32h",
+        "pm25": 131.32,
+        "actual_pm25": 180.25,
+        "tcn_pm25": 134.58,
+        "spike_probability": 0.004
+      },
+      {
+        "hour": 33,
+        "timestamp": "+33h",
+        "pm25": 128.56,
+        "actual_pm25": 150.75,
+        "tcn_pm25": 120.96,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 34,
+        "timestamp": "+34h",
+        "pm25": 119.0,
+        "actual_pm25": 123.75,
+        "tcn_pm25": 110.29,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 35,
+        "timestamp": "+35h",
+        "pm25": 113.23,
+        "actual_pm25": 96.25,
+        "tcn_pm25": 95.38,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 36,
+        "timestamp": "+36h",
+        "pm25": 109.55,
+        "actual_pm25": 90.75,
+        "tcn_pm25": 82.21,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 37,
+        "timestamp": "+37h",
+        "pm25": 106.12,
+        "actual_pm25": 101.0,
+        "tcn_pm25": 81.27,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 38,
+        "timestamp": "+38h",
+        "pm25": 103.78,
+        "actual_pm25": 104.75,
+        "tcn_pm25": 83.44,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 39,
+        "timestamp": "+39h",
+        "pm25": 108.85,
+        "actual_pm25": 93.25,
+        "tcn_pm25": 89.23,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 40,
+        "timestamp": "+40h",
+        "pm25": 129.58,
+        "actual_pm25": 88.75,
+        "tcn_pm25": 104.21,
+        "spike_probability": 0.003
+      },
+      {
+        "hour": 41,
+        "timestamp": "+41h",
+        "pm25": 150.91,
+        "actual_pm25": 131.25,
+        "tcn_pm25": 127.37,
+        "spike_probability": 0.007
+      },
+      {
+        "hour": 42,
+        "timestamp": "+42h",
+        "pm25": 181.63,
+        "actual_pm25": 182.5,
+        "tcn_pm25": 158.9,
+        "spike_probability": 0.019
+      },
+      {
+        "hour": 43,
+        "timestamp": "+43h",
+        "pm25": 201.97,
+        "actual_pm25": 250.0,
+        "tcn_pm25": 177.02,
+        "spike_probability": 0.037
+      },
+      {
+        "hour": 44,
+        "timestamp": "+44h",
+        "pm25": 204.2,
+        "actual_pm25": 354.75,
+        "tcn_pm25": 192.06,
+        "spike_probability": 0.039
+      },
+      {
+        "hour": 45,
+        "timestamp": "+45h",
+        "pm25": 211.82,
+        "actual_pm25": 370.0,
+        "tcn_pm25": 208.94,
+        "spike_probability": 0.05
+      },
+      {
+        "hour": 46,
+        "timestamp": "+46h",
+        "pm25": 183.75,
+        "actual_pm25": 392.75,
+        "tcn_pm25": 191.83,
+        "spike_probability": 0.02
+      },
+      {
+        "hour": 47,
+        "timestamp": "+47h",
+        "pm25": 173.48,
+        "actual_pm25": 479.25,
+        "tcn_pm25": 191.54,
+        "spike_probability": 0.015
+      },
+      {
+        "hour": 48,
+        "timestamp": "+48h",
+        "pm25": 162.3,
+        "actual_pm25": 417.25,
+        "tcn_pm25": 178.75,
+        "spike_probability": 0.01
+      },
+      {
+        "hour": 49,
+        "timestamp": "+49h",
+        "pm25": 160.58,
+        "actual_pm25": 219.0,
+        "tcn_pm25": 178.18,
+        "spike_probability": 0.009
+      },
+      {
+        "hour": 50,
+        "timestamp": "+50h",
+        "pm25": 154.58,
+        "actual_pm25": 226.0,
+        "tcn_pm25": 162.61,
+        "spike_probability": 0.008
+      },
+      {
+        "hour": 51,
+        "timestamp": "+51h",
+        "pm25": 154.51,
+        "actual_pm25": 316.5,
+        "tcn_pm25": 163.55,
+        "spike_probability": 0.008
+      },
+      {
+        "hour": 52,
+        "timestamp": "+52h",
+        "pm25": 155.54,
+        "actual_pm25": 261.75,
+        "tcn_pm25": 155.61,
+        "spike_probability": 0.008
+      },
+      {
+        "hour": 53,
+        "timestamp": "+53h",
+        "pm25": 150.32,
+        "actual_pm25": 290.25,
+        "tcn_pm25": 155.93,
+        "spike_probability": 0.007
+      },
+      {
+        "hour": 54,
+        "timestamp": "+54h",
+        "pm25": 152.01,
+        "actual_pm25": 292.75,
+        "tcn_pm25": 147.91,
+        "spike_probability": 0.007
+      },
+      {
+        "hour": 55,
+        "timestamp": "+55h",
+        "pm25": 150.49,
+        "actual_pm25": 230.75,
+        "tcn_pm25": 150.18,
+        "spike_probability": 0.007
+      },
+      {
+        "hour": 56,
+        "timestamp": "+56h",
+        "pm25": 153.69,
+        "actual_pm25": 228.25,
+        "tcn_pm25": 141.81,
+        "spike_probability": 0.008
+      },
+      {
+        "hour": 57,
+        "timestamp": "+57h",
+        "pm25": 147.63,
+        "actual_pm25": 159.0,
+        "tcn_pm25": 140.65,
+        "spike_probability": 0.006
+      },
+      {
+        "hour": 58,
+        "timestamp": "+58h",
+        "pm25": 141.96,
+        "actual_pm25": 93.75,
+        "tcn_pm25": 126.11,
+        "spike_probability": 0.005
+      },
+      {
+        "hour": 59,
+        "timestamp": "+59h",
+        "pm25": 119.29,
+        "actual_pm25": 68.5,
+        "tcn_pm25": 115.46,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 60,
+        "timestamp": "+60h",
+        "pm25": 113.36,
+        "actual_pm25": 63.75,
+        "tcn_pm25": 109.38,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 61,
+        "timestamp": "+61h",
+        "pm25": 99.72,
+        "actual_pm25": 52.75,
+        "tcn_pm25": 101.62,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 62,
+        "timestamp": "+62h",
+        "pm25": 101.83,
+        "actual_pm25": 49.75,
+        "tcn_pm25": 103.24,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 63,
+        "timestamp": "+63h",
+        "pm25": 104.41,
+        "actual_pm25": 55.25,
+        "tcn_pm25": 107.97,
+        "spike_probability": 0.001
+      },
+      {
+        "hour": 64,
+        "timestamp": "+64h",
+        "pm25": 118.97,
+        "actual_pm25": 74.5,
+        "tcn_pm25": 127.48,
+        "spike_probability": 0.002
+      },
+      {
+        "hour": 65,
+        "timestamp": "+65h",
+        "pm25": 144.89,
+        "actual_pm25": 130.5,
+        "tcn_pm25": 153.82,
+        "spike_probability": 0.006
+      },
+      {
+        "hour": 66,
+        "timestamp": "+66h",
+        "pm25": 177.68,
+        "actual_pm25": 222.0,
+        "tcn_pm25": 186.63,
+        "spike_probability": 0.017
+      },
+      {
+        "hour": 67,
+        "timestamp": "+67h",
+        "pm25": 194.5,
+        "actual_pm25": 278.0,
+        "tcn_pm25": 212.72,
+        "spike_probability": 0.029
+      },
+      {
+        "hour": 68,
+        "timestamp": "+68h",
+        "pm25": 207.06,
+        "actual_pm25": 397.25,
+        "tcn_pm25": 237.38,
+        "spike_probability": 0.043
+      },
+      {
+        "hour": 69,
+        "timestamp": "+69h",
+        "pm25": 218.44,
+        "actual_pm25": 492.25,
+        "tcn_pm25": 245.05,
+        "spike_probability": 0.062
+      },
+      {
+        "hour": 70,
+        "timestamp": "+70h",
+        "pm25": 280.71,
+        "actual_pm25": 489.0,
+        "tcn_pm25": 300.02,
+        "spike_probability": 0.345
+      },
+      {
+        "hour": 71,
+        "timestamp": "+71h",
+        "pm25": 324.62,
+        "actual_pm25": 602.25,
+        "tcn_pm25": 289.58,
+        "spike_probability": 0.694
+      },
+      {
+        "hour": 72,
+        "timestamp": "+72h",
+        "pm25": 326.56,
+        "actual_pm25": 818.25,
+        "tcn_pm25": 314.97,
+        "spike_probability": 0.708
+      }
+    ],
+    "actual": [
+      135.25,
+      140.75,
+      118.0,
+      112.5,
+      105.0,
+      107.75,
+      116.5,
+      112.0,
+      86.75,
+      59.25,
+      42.0,
+      45.5,
+      52.25,
+      40.5,
+      44.75,
+      74.75,
+      126.5,
+      197.25,
+      290.75,
+      334.0,
+      423.75,
+      363.5,
+      387.5,
+      548.5,
+      382.0,
+      236.75,
+      178.5,
+      197.5,
+      237.25,
+      172.75,
+      178.25,
+      180.25,
+      150.75,
+      123.75,
+      96.25,
+      90.75,
+      101.0,
+      104.75,
+      93.25,
+      88.75,
+      131.25,
+      182.5,
+      250.0,
+      354.75,
+      370.0,
+      392.75,
+      479.25,
+      417.25,
+      219.0,
+      226.0,
+      316.5,
+      261.75,
+      290.25,
+      292.75,
+      230.75,
+      228.25,
+      159.0,
+      93.75,
+      68.5,
+      63.75,
+      52.75,
+      49.75,
+      55.25,
+      74.5,
+      130.5,
+      222.0,
+      278.0,
+      397.25,
+      492.25,
+      489.0,
+      602.25,
+      818.25
+    ],
+    "tcn": [
+      194.3,
+      182.57,
+      160.79,
+      160.15,
+      144.82,
+      154.82,
+      155.84,
+      149.44,
+      138.91,
+      127.01,
+      118.6,
+      105.2,
+      95.85,
+      96.33,
+      100.17,
+      101.86,
+      111.0,
+      120.98,
+      130.68,
+      136.15,
+      139.02,
+      135.21,
+      130.79,
+      130.36,
+      136.41,
+      136.65,
+      135.41,
+      131.06,
+      137.87,
+      142.17,
+      142.49,
+      134.58,
+      120.96,
+      110.29,
+      95.38,
+      82.21,
+      81.27,
+      83.44,
+      89.23,
+      104.21,
+      127.37,
+      158.9,
+      177.02,
+      192.06,
+      208.94,
+      191.83,
+      191.54,
+      178.75,
+      178.18,
+      162.61,
+      163.55,
+      155.61,
+      155.93,
+      147.91,
+      150.18,
+      141.81,
+      140.65,
+      126.11,
+      115.46,
+      109.38,
+      101.62,
+      103.24,
+      107.97,
+      127.48,
+      153.82,
+      186.63,
+      212.72,
+      237.38,
+      245.05,
+      300.02,
+      289.58,
+      314.97
+    ]
+  }
+}
